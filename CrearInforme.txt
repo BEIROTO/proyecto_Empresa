@@ -1,1 +1,1 @@
-Informe creado.
+Creacion de estruccturas de carpetas y enlazado a github.
