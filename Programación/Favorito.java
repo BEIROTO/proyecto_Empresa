@@ -7,7 +7,6 @@ public class Favorito {
         this.idEvento = idEvento;
     }
 
-    // Getters y Setters
     public String getCorreoUsuario() { return correoUsuario; }
     public void setCorreoUsuario(String correoUsuario) { this.correoUsuario = correoUsuario; }
     public int getIdEvento() { return idEvento; }
