@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="title">Happiness&Co | Destinos Asturias</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="hero">
+        <nav>
+            <div class="logo" data-key="logo">Happiness&Co</div>
+            <ul>
+                <li><a href="#" data-key="destinos">Destinos</a></li>
+                <li><a href="#" data-key="ideas">Ideas</a></li>
+                <li><a href="#" data-key="inicio">Inicio</a></li>
+                <li><a href="#" id="lang-toggle" data-lang="en">EN</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1 data-key="asturias">ASTURIAS</h1>
+        </div>
+    </header>
+    <main>
+        <section class="destinos">
+            <h2 data-key="destinos-title">Destinos en Asturias</h2>
+            <div class="search">
+                <input type="text" data-key="search-placeholder" placeholder="Buscador de destinos">
+            </div>
+        </section>
+        <section class="eventos">
+            <div class="evento">
+                <h3 data-key="festival-title">FESTIVAL INTERCÉLTICO</h3>
+                <p data-key="dates">24-27 ABR 2026</p>
+                <p data-key="concerts">CONCIERTOS PLAYA SAN LORENZO</p>
+                <p data-key="live">EN VIVO LOS MÚSICOS</p>
+                <p data-key="location">Playa San Lorenzo</p>
+            </div>
+            <div class="mapa-placeholder">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2844.5!2d-5.6621!3d43.5352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x290d2f5b8b8b8b8b%3A0x1234567890abcdef!2sPlaya%20San%20Lorenzo%2C%20Gij%C3%B3n!5e0!3m2!1ses!2ses!4v1732400000000" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="logo" data-key="footer-logo">Happiness&Co</div>
+            <div data-key="contact">Contacto</div>
+            <div data-key="mapa">Mapa web</div>
+            <div data-key="cookies">Política de cookies</div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            es: {
+                title: 'Happiness&Co | Destinos Asturias',
+                logo: 'Happiness&Co',
+                destinos: 'Destinos',
+                ideas: 'Ideas',
+                inicio: 'Inicio',
+                asturias: 'ASTURIAS',
+                'destinos-title': 'Destinos en Asturias',
+                'search-placeholder': 'Buscador de destinos',
+                'festival-title': 'FESTIVAL INTERCÉLTICO',
+                dates: '24-27 ABR 2026',
+                concerts: 'CONCIERTOS PLAYA SAN LORENZO',
+                live: 'EN VIVO LOS MÚSICOS',
+                location: 'Playa San Lorenzo',
+                'footer-logo': 'Happiness&Co',
+                contact: 'Contacto',
+                mapa: 'Mapa web',
+                cookies: 'Política de cookies'
+            },
+            en: {
+                title: 'Happiness&Co | Asturias Destinations',
+                logo: 'Happiness&Co',
+                destinos: 'Destinations',
+                ideas: 'Ideas',
+                inicio: 'Home',
+                asturias: 'ASTURIAS',
+                'destinos-title': 'Destinations in Asturias',
+                'search-placeholder': 'Destinations search',
+                'festival-title': 'INTERCELTIC FESTIVAL',
+                dates: '24-27 APR 2026',
+                concerts: 'SAN LORENZO BEACH CONCERTS',
+                live: 'LIVE MUSICIANS',
+                location: 'San Lorenzo Beach',
+                'footer-logo': 'Happiness&Co',
+                contact: 'Contact',
+                mapa: 'Sitemap',
+                cookies: 'Cookie Policy'
+            }
+        };
+
+        let currentLang = 'es';
+
+        document.getElementById('lang-toggle').addEventListener('click', (e) => {
+            e.preventDefault();
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            document.getElementById('lang-toggle').textContent = currentLang.toUpperCase();
+            document.documentElement.lang = currentLang;
+            updateTexts();
+        });
+
+        function updateTexts() {
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (translations[currentLang][key]) {
+                    if (el.tagName === 'INPUT') {
+                        el.placeholder = translations[currentLang][key];
+                    } else {
+                        el.textContent = translations[currentLang][key];
+                    }
+                }
+            });
+            document.title = translations[currentLang].title;
+        }
+
+        // Carga inicial
+        updateTexts();
+    </script>
+</body>
+</html>
