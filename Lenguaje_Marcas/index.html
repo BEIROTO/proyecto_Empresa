@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="title">Happiness&Co | Asturias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
@@ -11,7 +14,6 @@
     <!-- ===== HEADER ===== -->
     <header class="main-header">
         <img src="./assets/img/logo.png" alt="Happiness & Co logo" class="logo">
-
         <nav class="main-nav">
             <a data-i18n="nav_inicio" href="#">Inicio</a>
             <a data-i18n="nav_eventos" href="#">Eventos</a>
@@ -20,7 +22,6 @@
             <a data-i18n="nav_fuentes" href="#">Fuentes</a>
             <a data-i18n="nav_contacto" href="#">Contacto</a>
         </nav>
-
         <div class="lang-switch">
             <select id="languageSelect" onchange="changeLanguage(this.value)">
                 <option value="es">ES 🇪🇸</option>
@@ -29,58 +30,46 @@
         </div>
     </header>
 
-    <!-- ===== HERO: imagen grande con fecha y título ===== -->
+    <!-- ===== HERO ===== -->
     <section class="hero">
         <img src="./assets/img/img3.png" alt="Costa de Asturias" class="hero-bg">
         <div class="hero-overlay"></div>
-
         <div class="hero-content">
-            <!-- Info del evento destacado (izquierda) -->
             <div class="hero-event-info">
                 <span class="hero-date">12 Abril 2026</span>
                 <h2 class="hero-title">Festival de las Llamas, Oviedo</h2>
             </div>
-
-            <!-- Slider de tarjetas (derecha) -->
-            <!-- Slider de tarjetas (derecha) -->
-<div class="hero-right">
-    <div class="hero-slider">
-        <article class="hero-card">
-            <img src="./assets/img/img1.jpg" alt="Basílica en montañas Asturias">
-            <div class="hero-card-overlay">
-                <span>Romería de San Marcos</span>
+            <div class="hero-right">
+                <div class="hero-slider">
+                    <article class="hero-card">
+                        <img src="./assets/img/img1.jpg" alt="Basílica en montañas Asturias">
+                        <div class="hero-card-overlay"><span>Romería de San Marcos</span></div>
+                    </article>
+                    <article class="hero-card">
+                        <img src="./assets/img/img4.png" alt="Músicos en calle Asturias">
+                        <div class="hero-card-overlay"><span>Concierto en la Playa de Salinas</span></div>
+                    </article>
+                    <article class="hero-card">
+                        <img src="./assets/img/img5.jpg" alt="Músico en montañas Asturias">
+                        <div class="hero-card-overlay"><span>Feria del Queso Cabrales</span></div>
+                    </article>
+                </div>
+                <div class="hero-arrows">
+                    <button class="arrow prev">&lt;</button>
+                    <button class="arrow next">&gt;</button>
+                </div>
             </div>
-        </article>
-        <article class="hero-card">
-            <img src="./assets/img/img4.png" alt="Músicos en calle Asturias">
-            <div class="hero-card-overlay">
-                <span>Concierto en la Playa de Salinas</span>
-            </div>
-        </article>
-        <article class="hero-card">
-            <img src="./assets/img/img5.jpg" alt="Músico en montañas Asturias">
-            <div class="hero-card-overlay">
-                <span>Feria del Queso Cabrales</span>
-            </div>
-        </article>
-    </div>
-    <div class="hero-arrows">
-        <button class="arrow prev">&lt;</button>
-        <button class="arrow next">&gt;</button>
-    </div>
-</div>
         </div>
     </section>
 
     <!-- ===== CUERPO PRINCIPAL ===== -->
     <div class="page-body">
 
-        <!-- MAIN: Próximos eventos -->
+        <!-- MAIN: Próximos eventos + Mapa -->
         <main class="upcoming-events">
             <h2 class="section-title" data-i18n="proximos_eventos">Próximos Eventos</h2>
 
             <div class="events-list">
-
                 <article class="event-card">
                     <img src="./assets/img/img1.jpg" alt="Romería de San Marcos">
                     <div class="event-card-body">
@@ -90,7 +79,6 @@
                         <a href="#">Ver evento &rarr;</a>
                     </div>
                 </article>
-
                 <article class="event-card">
                     <img src="./assets/img/img4.png" alt="Concierto en la playa">
                     <div class="event-card-body">
@@ -100,7 +88,6 @@
                         <a href="#">Ver evento &rarr;</a>
                     </div>
                 </article>
-
                 <article class="event-card">
                     <img src="./assets/img/img5.jpg" alt="Feria del Queso">
                     <div class="event-card-body">
@@ -110,14 +97,26 @@
                         <a href="#">Ver evento &rarr;</a>
                     </div>
                 </article>
+            </div>
 
+            <!-- MAPA -->
+            <div class="map-container" style="margin-top: 30px;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d186068.23!2d-6.0419!3d43.3614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd36901e2e4e8d9b%3A0x4d5a6b6b6b6b6b6b!2sAsturias%2C%20Spain!5e0!3m2!1ses!2ses!4v1234567890"
+                    width="100%"
+                    height="300"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Mapa de Asturias">
+                </iframe>
             </div>
         </main>
 
         <!-- ASIDE: Recomendados -->
         <aside class="sidebar">
             <h2 class="section-title" data-i18n="recomendados">Recomendados</h2>
-
             <article class="sidebar-card">
                 <img src="./assets/img/img1.jpg" alt="Recomendado 1">
                 <div class="sidebar-card-body">
@@ -127,7 +126,6 @@
                     <a href="#">Ver evento &rarr;</a>
                 </div>
             </article>
-
             <article class="sidebar-card">
                 <img src="./assets/img/img4.png" alt="Recomendado 2">
                 <div class="sidebar-card-body">
@@ -137,7 +135,6 @@
                     <a href="#">Ver evento &rarr;</a>
                 </div>
             </article>
-
             <article class="sidebar-card">
                 <img src="./assets/img/img5.jpg" alt="Recomendado 3">
                 <div class="sidebar-card-body">
@@ -147,8 +144,8 @@
                     <a href="#">Ver evento &rarr;</a>
                 </div>
             </article>
-
         </aside>
+
     </div>
 
     <!-- ===== FOOTER ===== -->
@@ -203,7 +200,6 @@
 
         changeLanguage('es');
 
-        // Slider
         const prev = document.querySelector('.prev');
         const next = document.querySelector('.next');
         const cards = document.querySelectorAll('.hero-card');
