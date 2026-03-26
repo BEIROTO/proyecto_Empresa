@@ -4,116 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="title">Happiness&Co | Asturias</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body>
 
     <!-- ===== HEADER ===== -->
-    <header class="main-header fixed top-0 left-0 w-full z-50 flex items-center justify-between px-10 py-4 bg-white/95 backdrop-blur shadow-sm">
-        <img src="./assets/img/logo.png" alt="Happiness & Co logo" class="h-12">
+    <header class="main-header">
+        <img src="./assets/img/logo.png" alt="Happiness & Co logo" class="logo">
 
-        <nav class="flex gap-6 text-sm font-medium">
-            <a data-i18n="nav_inicio" href="#" class="text-gray-700 hover:text-pink-600 transition-colors">Inicio</a>
-            <a data-i18n="nav_eventos" href="#" class="text-gray-700 hover:text-pink-600 transition-colors">Eventos</a>
-            <a data-i18n="nav_historial" href="#" class="text-gray-700 hover:text-pink-600 transition-colors">Historial de eventos</a>
-            <a data-i18n="nav_nosotros" href="#" class="text-gray-700 hover:text-pink-600 transition-colors">Sobre nosotros</a>
-            <a data-i18n="nav_fuentes" href="#" class="text-gray-700 hover:text-pink-600 transition-colors">Fuentes</a>
-            <a data-i18n="nav_contacto" href="#" class="text-gray-700 hover:text-pink-600 transition-colors">Contacto</a>
+        <nav class="main-nav">
+            <a data-i18n="nav_inicio" href="#">Inicio</a>
+            <a data-i18n="nav_eventos" href="#">Eventos</a>
+            <a data-i18n="nav_historial" href="#">Historial de eventos</a>
+            <a data-i18n="nav_nosotros" href="#">Sobre nosotros</a>
+            <a data-i18n="nav_fuentes" href="#">Fuentes</a>
+            <a data-i18n="nav_contacto" href="#">Contacto</a>
         </nav>
 
         <div class="lang-switch">
-            <select id="languageSelect" onchange="changeLanguage(this.value)"
-                class="bg-white border border-gray-200 rounded-full px-3 py-2 text-sm cursor-pointer focus:outline-none focus:ring-2 focus:ring-orange-400">
+            <select id="languageSelect" onchange="changeLanguage(this.value)">
                 <option value="es">ES 🇪🇸</option>
                 <option value="en">EN 🇬🇧</option>
             </select>
         </div>
     </header>
 
-    <!-- ===== HERO ===== -->
-    <section class="relative h-screen overflow-hidden">
-        <img src="./assets/img/img3.png" alt="Costa de Asturias" class="w-full h-full object-cover block">
+    <!-- ===== HERO: imagen grande con fecha y título ===== -->
+    <section class="hero">
+        <img src="./assets/img/img3.png" alt="Costa de Asturias" class="hero-bg">
+        <div class="hero-overlay"></div>
 
-        <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20"></div>
-
-        <div class="absolute inset-0 flex items-end justify-between px-16 pb-12 pt-20 text-white">
-
-            <!-- Info evento destacado -->
-            <div class="flex flex-col gap-3">
-                <span class="bg-orange-500 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-widest w-fit">
-                    12 Abril 2026
-                </span>
-                <h2 class="text-4xl font-bold max-w-lg leading-tight drop-shadow-lg">
-                    Festival de las Llamas, Oviedo
-                </h2>
+        <div class="hero-content">
+            <!-- Info del evento destacado (izquierda) -->
+            <div class="hero-event-info">
+                <span class="hero-date">12 Abril 2026</span>
+                <h2 class="hero-title">Festival de las Llamas, Oviedo</h2>
             </div>
 
-            <!-- Slider derecha -->
-            <div class="flex flex-col items-end gap-4">
-                <div class="hero-slider flex gap-4">
-                    <article class="hero-card">
-                        <img src="./assets/img/img1.jpg" alt="Basílica en montañas Asturias">
-                        <div class="hero-card-overlay"><span>Romería de San Marcos</span></div>
-                    </article>
-                    <article class="hero-card">
-                        <img src="./assets/img/img4.png" alt="Músicos en calle Asturias">
-                        <div class="hero-card-overlay"><span>Concierto en la Playa de Salinas</span></div>
-                    </article>
-                    <article class="hero-card">
-                        <img src="./assets/img/img5.jpg" alt="Músico en montañas Asturias">
-                        <div class="hero-card-overlay"><span>Feria del Queso Cabrales</span></div>
-                    </article>
-                </div>
-                <div class="flex gap-3">
-                    <button class="arrow prev w-8 h-8 rounded-full bg-orange-500 hover:bg-pink-600 text-white font-bold transition-all hover:scale-110">
-                        &lt;
-                    </button>
-                    <button class="arrow next w-8 h-8 rounded-full bg-orange-500 hover:bg-pink-600 text-white font-bold transition-all hover:scale-110">
-                        &gt;
-                    </button>
-                </div>
+            <!-- Slider de tarjetas (derecha) -->
+            <!-- Slider de tarjetas (derecha) -->
+<div class="hero-right">
+    <div class="hero-slider">
+        <article class="hero-card">
+            <img src="./assets/img/img1.jpg" alt="Basílica en montañas Asturias">
+            <div class="hero-card-overlay">
+                <span>Romería de San Marcos</span>
             </div>
+        </article>
+        <article class="hero-card">
+            <img src="./assets/img/img4.png" alt="Músicos en calle Asturias">
+            <div class="hero-card-overlay">
+                <span>Concierto en la Playa de Salinas</span>
+            </div>
+        </article>
+        <article class="hero-card">
+            <img src="./assets/img/img5.jpg" alt="Músico en montañas Asturias">
+            <div class="hero-card-overlay">
+                <span>Feria del Queso Cabrales</span>
+            </div>
+        </article>
+    </div>
+    <div class="hero-arrows">
+        <button class="arrow prev">&lt;</button>
+        <button class="arrow next">&gt;</button>
+    </div>
+</div>
         </div>
     </section>
 
     <!-- ===== CUERPO PRINCIPAL ===== -->
-    <div class="grid grid-cols-[1fr_320px] gap-8 max-w-6xl mx-auto my-10 px-6">
+    <div class="page-body">
 
         <!-- MAIN: Próximos eventos -->
-        <main>
-            <h2 class="text-2xl font-bold mb-5 pl-3 border-l-4 border-orange-500 text-gray-900"
-                data-i18n="proximos_eventos">Próximos Eventos</h2>
+        <main class="upcoming-events">
+            <h2 class="section-title" data-i18n="proximos_eventos">Próximos Eventos</h2>
 
-            <div class="flex flex-col gap-5">
+            <div class="events-list">
 
-                <article class="flex bg-white rounded-xl overflow-hidden shadow-md hover:-translate-y-1 hover:shadow-xl transition-all">
-                    <img src="./assets/img/img1.jpg" alt="Romería de San Marcos" class="w-36 h-28 object-cover flex-shrink-0">
-                    <div class="p-4 flex flex-col justify-between gap-1">
-                        <span class="text-xs font-bold text-orange-500 uppercase tracking-wide">20 Abril 2026</span>
-                        <h3 class="text-base font-semibold text-gray-900">Romería de San Marcos</h3>
-                        <p class="text-sm text-gray-500 leading-snug">Celebración tradicional con música folk y gastronomía asturiana en el valle.</p>
-                        <a href="#" class="text-sm font-semibold text-orange-500 hover:text-pink-600 hover:underline w-fit transition-colors">Ver evento &rarr;</a>
+                <article class="event-card">
+                    <img src="./assets/img/img1.jpg" alt="Romería de San Marcos">
+                    <div class="event-card-body">
+                        <span class="event-date">20 Abril 2026</span>
+                        <h3>Romería de San Marcos</h3>
+                        <p>Celebración tradicional con música folk y gastronomía asturiana en el valle.</p>
+                        <a href="#">Ver evento &rarr;</a>
                     </div>
                 </article>
 
-                <article class="flex bg-white rounded-xl overflow-hidden shadow-md hover:-translate-y-1 hover:shadow-xl transition-all">
-                    <img src="./assets/img/img4.png" alt="Concierto en la playa" class="w-36 h-28 object-cover flex-shrink-0">
-                    <div class="p-4 flex flex-col justify-between gap-1">
-                        <span class="text-xs font-bold text-orange-500 uppercase tracking-wide">5 Mayo 2026</span>
-                        <h3 class="text-base font-semibold text-gray-900">Concierto en la Playa de Salinas</h3>
-                        <p class="text-sm text-gray-500 leading-snug">Actuaciones en vivo al aire libre con artistas locales e internacionales.</p>
-                        <a href="#" class="text-sm font-semibold text-orange-500 hover:text-pink-600 hover:underline w-fit transition-colors">Ver evento &rarr;</a>
+                <article class="event-card">
+                    <img src="./assets/img/img4.png" alt="Concierto en la playa">
+                    <div class="event-card-body">
+                        <span class="event-date">5 Mayo 2026</span>
+                        <h3>Concierto en la Playa de Salinas</h3>
+                        <p>Actuaciones en vivo al aire libre con artistas locales e internacionales.</p>
+                        <a href="#">Ver evento &rarr;</a>
                     </div>
                 </article>
 
-                <article class="flex bg-white rounded-xl overflow-hidden shadow-md hover:-translate-y-1 hover:shadow-xl transition-all">
-                    <img src="./assets/img/img5.jpg" alt="Feria del Queso" class="w-36 h-28 object-cover flex-shrink-0">
-                    <div class="p-4 flex flex-col justify-between gap-1">
-                        <span class="text-xs font-bold text-orange-500 uppercase tracking-wide">18 Mayo 2026</span>
-                        <h3 class="text-base font-semibold text-gray-900">Feria del Queso Cabrales</h3>
-                        <p class="text-sm text-gray-500 leading-snug">Degustación y concurso del famoso queso asturiano en Arenas de Cabrales.</p>
-                        <a href="#" class="text-sm font-semibold text-orange-500 hover:text-pink-600 hover:underline w-fit transition-colors">Ver evento &rarr;</a>
+                <article class="event-card">
+                    <img src="./assets/img/img5.jpg" alt="Feria del Queso">
+                    <div class="event-card-body">
+                        <span class="event-date">18 Mayo 2026</span>
+                        <h3>Feria del Queso Cabrales</h3>
+                        <p>Degustación y concurso del famoso queso asturiano en Arenas de Cabrales.</p>
+                        <a href="#">Ver evento &rarr;</a>
                     </div>
                 </article>
 
@@ -121,37 +115,36 @@
         </main>
 
         <!-- ASIDE: Recomendados -->
-        <aside class="flex flex-col gap-5">
-            <h2 class="text-xl font-bold mb-1 pl-3 border-l-4 border-pink-600 text-gray-900"
-                data-i18n="recomendados">Recomendados</h2>
+        <aside class="sidebar">
+            <h2 class="section-title" data-i18n="recomendados">Recomendados</h2>
 
-            <article class="bg-white rounded-xl overflow-hidden shadow-md hover:-translate-y-1 hover:shadow-xl transition-all">
-                <img src="./assets/img/img1.jpg" alt="Recomendado 1" class="w-full h-36 object-cover block">
-                <div class="p-3 flex flex-col gap-1">
-                    <span class="text-xs font-bold text-pink-600 uppercase tracking-wide">30 Abril 2026</span>
-                    <h3 class="text-sm font-semibold text-gray-900">Descenso del Sella</h3>
-                    <p class="text-xs text-gray-500 leading-snug">El descenso en canoa más famoso de España en plena naturaleza asturiana.</p>
-                    <a href="#" class="text-xs font-semibold text-pink-600 hover:text-orange-500 hover:underline w-fit transition-colors">Ver evento &rarr;</a>
+            <article class="sidebar-card">
+                <img src="./assets/img/img1.jpg" alt="Recomendado 1">
+                <div class="sidebar-card-body">
+                    <span class="event-date">30 Abril 2026</span>
+                    <h3>Descenso del Sella</h3>
+                    <p>El descenso en canoa más famoso de España en plena naturaleza asturiana.</p>
+                    <a href="#">Ver evento &rarr;</a>
                 </div>
             </article>
 
-            <article class="bg-white rounded-xl overflow-hidden shadow-md hover:-translate-y-1 hover:shadow-xl transition-all">
-                <img src="./assets/img/img4.png" alt="Recomendado 2" class="w-full h-36 object-cover block">
-                <div class="p-3 flex flex-col gap-1">
-                    <span class="text-xs font-bold text-pink-600 uppercase tracking-wide">10 Mayo 2026</span>
-                    <h3 class="text-sm font-semibold text-gray-900">Semana Negra de Gijón</h3>
-                    <p class="text-xs text-gray-500 leading-snug">Festival literario y cultural con autores nacionales e internacionales.</p>
-                    <a href="#" class="text-xs font-semibold text-pink-600 hover:text-orange-500 hover:underline w-fit transition-colors">Ver evento &rarr;</a>
+            <article class="sidebar-card">
+                <img src="./assets/img/img4.png" alt="Recomendado 2">
+                <div class="sidebar-card-body">
+                    <span class="event-date">10 Mayo 2026</span>
+                    <h3>Semana Negra de Gijón</h3>
+                    <p>Festival literario y cultural con autores nacionales e internacionales.</p>
+                    <a href="#">Ver evento &rarr;</a>
                 </div>
             </article>
 
-            <article class="bg-white rounded-xl overflow-hidden shadow-md hover:-translate-y-1 hover:shadow-xl transition-all">
-                <img src="./assets/img/img5.jpg" alt="Recomendado 3" class="w-full h-36 object-cover block">
-                <div class="p-3 flex flex-col gap-1">
-                    <span class="text-xs font-bold text-pink-600 uppercase tracking-wide">22 Mayo 2026</span>
-                    <h3 class="text-sm font-semibold text-gray-900">Mercado Medieval de Avilés</h3>
-                    <p class="text-xs text-gray-500 leading-snug">Recreación histórica con artesanía, gastronomía y espectáculos medievales.</p>
-                    <a href="#" class="text-xs font-semibold text-pink-600 hover:text-orange-500 hover:underline w-fit transition-colors">Ver evento &rarr;</a>
+            <article class="sidebar-card">
+                <img src="./assets/img/img5.jpg" alt="Recomendado 3">
+                <div class="sidebar-card-body">
+                    <span class="event-date">22 Mayo 2026</span>
+                    <h3>Mercado Medieval de Avilés</h3>
+                    <p>Recreación histórica con artesanía, gastronomía y espectáculos medievales.</p>
+                    <a href="#">Ver evento &rarr;</a>
                 </div>
             </article>
 
@@ -159,44 +152,58 @@
     </div>
 
     <!-- ===== FOOTER ===== -->
-    <footer class="bg-[#1a1a2e] text-gray-400 text-center py-7 mt-5">
-        <div class="flex justify-center gap-6 mb-4">
-            <a href="#" class="text-white hover:text-orange-400 text-sm transition-colors">📸 Instagram</a>
-            <a href="#" class="text-white hover:text-orange-400 text-sm transition-colors">📘 Facebook</a>
-            <a href="#" class="text-white hover:text-orange-400 text-sm transition-colors">🐦 Twitter</a>
-            <a href="#" class="text-white hover:text-orange-400 text-sm transition-colors">▶️ YouTube</a>
+    <footer>
+        <div class="social-links">
+            <a href="#" aria-label="Instagram">📸 Instagram</a>
+            <a href="#" aria-label="Facebook">📘 Facebook</a>
+            <a href="#" aria-label="Twitter/X">🐦 Twitter</a>
+            <a href="#" aria-label="YouTube">▶️ YouTube</a>
         </div>
-        <p class="text-xs text-gray-500">&copy; 2026 Happiness&amp;Co Asturias. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Happiness&amp;Co Asturias. Todos los derechos reservados.</p>
     </footer>
 
     <script>
         const translations = {
             es: {
                 title: "Happiness&Co | Asturias",
-                nav_inicio: "Inicio", nav_eventos: "Eventos",
-                nav_historial: "Historial de eventos", nav_nosotros: "Sobre nosotros",
-                nav_fuentes: "Fuentes", nav_contacto: "Contacto",
-                proximos_eventos: "Próximos Eventos", recomendados: "Recomendados"
+                nav_inicio: "Inicio",
+                nav_eventos: "Eventos",
+                nav_historial: "Historial de eventos",
+                nav_nosotros: "Sobre nosotros",
+                nav_fuentes: "Fuentes",
+                nav_contacto: "Contacto",
+                proximos_eventos: "Próximos Eventos",
+                recomendados: "Recomendados"
             },
             en: {
                 title: "Happiness&Co | Asturias",
-                nav_inicio: "Home", nav_eventos: "Events",
-                nav_historial: "Event History", nav_nosotros: "About Us",
-                nav_fuentes: "Sources", nav_contacto: "Contact",
-                proximos_eventos: "Upcoming Events", recomendados: "Recommended"
+                nav_inicio: "Home",
+                nav_eventos: "Events",
+                nav_historial: "Event History",
+                nav_nosotros: "About Us",
+                nav_fuentes: "Sources",
+                nav_contacto: "Contact",
+                proximos_eventos: "Upcoming Events",
+                recomendados: "Recommended"
             }
         };
 
+        let currentLang = 'es';
+
         function changeLanguage(lang) {
+            currentLang = lang;
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                if (translations[lang][key]) el.textContent = translations[lang][key];
+                if (translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
             });
             document.title = translations[lang].title;
         }
 
         changeLanguage('es');
 
+        // Slider
         const prev = document.querySelector('.prev');
         const next = document.querySelector('.next');
         const cards = document.querySelectorAll('.hero-card');
@@ -209,11 +216,13 @@
             index = (index + 1) % cards.length;
             cards[index].style.display = 'block';
         });
+
         prev?.addEventListener('click', () => {
             cards[index].style.display = 'none';
             index = (index - 1 + cards.length) % cards.length;
             cards[index].style.display = 'block';
         });
     </script>
+
 </body>
 </html>
