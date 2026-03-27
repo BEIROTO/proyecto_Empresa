@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Eventos | Happiness&Co Asturias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+        /* ===== HISTORIAL GENERAL ===== */
+        .historial-banner {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            padding: 80px 20px;
+            text-align: center;
+            color: #fff;
+        }
+        .historial-banner h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        .historial-banner p {
+            font-size: 1.1rem;
+            color: #a0aec0;
+        }
+
+        .historial-section {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        /* ===== CARD DE EVENTO HISTORIAL ===== */
+        .historial-card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+            margin-bottom: 60px;
+            overflow: hidden;
+            scroll-margin-top: 100px;
+            border-top: 5px solid #6c63ff;
+        }
+        .historial-card.musica   { border-top-color: #e91e8c; }
+        .historial-card.gastronomia { border-top-color: #f5a623; }
+        .historial-card.cultura  { border-top-color: #00b4d8; }
+
+        .historial-card-header {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 28px 32px 20px;
+        }
+        .historial-card-header img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+        .historial-card-header-info h2 {
+            font-size: 1.5rem;
+            margin: 0 0 6px;
+            color: #1a1a2e;
+        }
+        .historial-card-header-info .meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .badge-cat {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+        .badge-cat.musica      { background: #e91e8c; }
+        .badge-cat.gastronomia { background: #f5a623; }
+        .badge-cat.cultura     { background: #00b4d8; }
+
+        .badge-fin {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            background: #e2e8f0;
+            color: #718096;
+        }
+        .historial-card-header-info .fecha {
+            font-size: 0.9rem;
+            color: #718096;
+        }
+        .historial-card-desc {
+            padding: 0 32px 20px;
+            color: #4a5568;
+            line-height: 1.7;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        /* ===== RESEÑAS ===== */
+        .resenas-titulo {
+            padding: 20px 32px 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .resenas-lista {
+            padding: 0 32px 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .resena {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            background: #f7fafc;
+            border-radius: 10px;
+            padding: 14px 18px;
+            border-left: 4px solid transparent;
+        }
+        .resena.positiva { border-left-color: #48bb78; background: #f0fff4; }
+        .resena.negativa { border-left-color: #fc8181; background: #fff5f5; }
+
+        .resena-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            color: #fff;
+        }
+        .positiva .resena-avatar { background: #48bb78; }
+        .negativa .resena-avatar { background: #fc8181; }
+
+        .resena-body {}
+        .resena-body .resena-autor {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #2d3748;
+            margin-bottom: 3px;
+        }
+        .resena-body .estrellas {
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+        }
+        .resena-body p {
+            font-size: 0.92rem;
+            color: #4a5568;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            .historial-card-header { flex-direction: column; align-items: flex-start; }
+            .historial-card-header img { width: 100%; height: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="main-header">
+        <img src="./assets/img/logo.png" alt="Happiness & Co logo" class="logo">
+        <nav class="main-nav">
+            <a href="./index.html">Inicio</a>
+            <a href="./eventos.html">Eventos</a>
+            <a href="./historial.html" class="nav-active">Historial de eventos</a>
+            <a href="#">Sobre nosotros</a>
+            <a href="#">Fuentes</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <div class="lang-switch">
+            <select id="languageSelect">
+                <option value="es">ES 🇪🇸</option>
+                <option value="en">EN 🇬🇧</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- ===== BANNER ===== -->
+    <section class="historial-banner">
+        <h1>📁 Historial de Eventos</h1>
+        <p>Todos los eventos pasados con valoraciones y reseñas de la comunidad</p>
+    </section>
+
+    <!-- ===== EVENTOS ===== -->
+    <section class="historial-section">
+
+        <!-- ====== MÚSICA ====== -->
+        <article class="historial-card musica" id="concierto-gaitas">
+            <div class="historial-card-header">
+                <img src="./assets/img/musica4.jpg" alt="Concierto de Gaitas">
+                <div class="historial-card-header-info">
+                    <h2>Concierto de Gaitas en Oviedo</h2>
+                    <div class="meta">
+                        <span class="badge-cat musica">Música</span>
+                        <span class="badge-fin">Finalizado</span>
+                    </div>
+                    <span class="fecha">📅 8 de febrero de 2026 · Auditorio Príncipe Felipe, Oviedo</span>
+                </div>
+            </div>
+            <div class="historial-card-desc">
+                <p>Gran concierto de gaita asturiana en el Auditorio Príncipe Felipe con los mejores gaiteros del Principado. El evento reunió a más de 1.200 asistentes en una noche que celebró la música tradicional asturiana con arreglos modernos y una puesta en escena espectacular.</p>
+            </div>
+            <div class="resenas-titulo">🗣️ Reseñas de asistentes</div>
+            <div class="resenas-lista">
+                <div class="resena positiva">
+                    <div class="resena-avatar">M</div>
+                    <div class="resena-body">
+                        <div class="resena-autor">María G. · Oviedo</div>
+                        <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                        <p>Una noche mágica. La mezcla de gaita tradicional con arreglos de orquesta fue simplemente emocionante. Lloré de la emoción en varios momentos. ¡Ojalá lo repitan!</p>
+                    </div>
+                </div>
+                <div class="resena positiva">
+                    <div class="resena-avatar">J</div>
+                    <div class="resena-body">
+                        <div class="resena-autor">Javier R. · Gijón</div>
+                        <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                        <p>El auditorio estaba lleno y la energía era increíble. Los músicos demostraron un nivel técnico excepcional. Muy recomendable para conocer la música asturiana en su máximo esplendor.</p>
+                    </div>
+                </div>
+                <div class="resena negativa">
+                    <div class="resena-avatar">L</div>
+                    <div class="resena-body">
+                        <div class="resena-autor">Laura P. · Avilés</div>
+                        <div class="estrellas">⭐⭐⭐</div>
+                        <p>El concierto estuvo bien, pero la acústica en las butacas laterales dejó bastante que desear. Además, el precio de las consumiciones en el bar del auditorio era excesivo para lo que ofrecían.</p>
+                    </div>
+                </div>
+                <div class="resena negativa">
+                    <div class="resena-avatar">C</div>
+                    <div class="resena-body">
+                        <div class="resena-autor">Carlos M. · Mieres</div>
+                        <div class="estrellas">⭐⭐</div>
+                        <p>Me esperaba algo más variado en el repertorio. Todas las piezas sonaban muy similares y el concierto se hizo largo. La organización también tardó demasiado en comenzar, casi 40 minutos de retraso.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ====== GASTRONOMÍA 1 ====== -->
+        <article class="historial-card gastronomia" id="ruta-sidra">
+            <div class="historial-card-header">
+                <img src="./assets/img/gastronomia1.jpg" alt="Ruta de la Sidra">
+                <div class="historial-card-header-info">
+                    <h2>Ruta de la Sidra Natural de Gijón</h2>
+                    <div class="meta">
+                        <span class="badge-cat gastronomia">Gastronomía</span>
+                        <span class="badge-fin">Finalizado</span>
+                    </div>
+                    <span class="fecha">📅 14 de enero de 2026 · Gijón</span>
+                </div>
+            </div>
+            <div class="historial-card-desc">
+                <p>Recorrido por los mejores lllagares y sidrerías del centro de Gijón para degustar la sidra natural asturiana en su esencia más pura. Los participantes pudieron aprender el arte del escanciado y maridar la sidra con pintxos tradicionales de la región.</p>
+            </div>
+            <div class="resenas-titulo">🗣️ Reseñas de asistentes</div>
+            <div class="resenas-lista">
+                <div class="resena positiva">
+                    <div class="resena-avatar">A</div>
+                    <div class="resena-body">
+                        <div class="resena-autor">Ana F. · Gijón</div>
+                        <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                        <p>Una experiencia auténtica y diferente. Aprendimos a escanciar correctamente y el guía conocía cada sidrería como la palma de su mano. Los pintxos incluidos eran deliciosos. Totalmente recomendable para locales y turistas.</p>
+                    </div>
+                </div>
+                <div class="resena positiva">
+                    <div class="resena-avatar">R</div>
+                    <div class="resena-body">
+                        <div class="resena-autor">Roberto S. · Madrid</div>
+                        <div class="estrellas">⭐⭐⭐⭐</div>
+                        <p>Vine expresamente desde Madrid para esta ruta y no me arrepentí. La sidra natural asturiana no tiene comparación. Cuatro estrellas porque el grupo era demasiado grande y a veces no se escuchaba bien al guía.</p>
+                    </div>
+                </div>
+                <div class="resena negativa">
+                    <div class="resena-avatar">P</div>
+                    <div class="resena-body">
+                        <div class="resena-autor">Patricia N. · Oviedo</div>
+                        <div class="estrellas">⭐⭐</div>
+                        <p>El precio no se correspondía con lo que ofrecieron. Solo visitamos tres sidrerías en lugar de las cinco anunciadas y el recorrido se acortó sin explicación. Esperaba algo más completo y organizado.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ====== GASTRONOMÍA 2 ====== -->
+        <article class="historial-card gastronomia" id="jornadas-pote">
+            <div class="historial-card-header">
+                <img src="./assets/img/gastronomia2.jpg" alt="Jornadas del Pote Asturiano">
+                <div class="historial-card-header-info">
+                    <h2>Jornadas del Pote Asturiano</h2>
+                    <div class="meta">
+                        <span class="badge-cat gastronomia">Gastronomía</span>
+                        <span class="badge-fin">Finalizado</span>
+                    </div>
+                    <span class="fecha">📅 3 de marzo de 2026 · Avilés</span>
+                </div>
+            </div>
+            <div class="historial-card-desc">
+                <p>Restaurantes de toda Asturias presentaron sus versiones del pote asturiano tradicional en este evento multitudinario celebrado en el recinto ferial de Avilés. El ganador fue el restaurante Casa Pepe de Cangas del Narcea con su receta centenaria.</p>
+            </div>
+            <div class="resenas-titulo">🗣️ Reseñas de asistentes</div>
+            <div class="resenas-lista">
+                <div class="resena positiva">
+                    <div class="resena-avatar">E</div>
+                    <div class="resena-body">
+                        <div class="resena-autor">Elena V. · Cangas del Narcea</div>
+                        <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                        <p>¡El ganador se lo merecía con creces! El pote de Casa Pepe era una explosión de sabor. Qué bueno ver cómo se preservan estas recetas tradicionales. El ambiente era festivo y muy familiar. Repetiré sin duda.</p>
+                    </div>
+                </div>
+                <div class="resena positiva">
+                    <div class="resena-avatar">D</div>
+                    <div class="resena-body">
+                        <div class="resena-autor">Diego M. · Avilés</div>
+                        <div class="estrellas">⭐⭐⭐⭐</div>
+                        <p>Me encantó poder comparar tantas versiones distintas del pote. Algunos restaurantes se arriesgaron con toques modernos muy interesantes. La organización estuvo muy bien, aunque las colas eran largas al mediodía.</p>
+                    </div>
+                </div>
+                <div class="resena negativa">
+                    <div class="resena-avatar">S</div>
+                    <div class="resena-body">
+                        <div class="resena-autor">Sofía T. · Gijón</div>
+                        <div class="estrellas">⭐⭐⭐</div>
+                        <p>Buena idea, ejecución mejorable. Las raciones eran demasiado pequeñas para el precio que cobraban y el recinto se quedó pequeño para la cantidad de gente que acudió. Esperemos que el año que viene amplíen el aforo.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ====== CULTURA 1 ====== -->
+        <article class="historial-card cultura" id="expo-arte">
+            <div class="historial-card-header">
+                <img src="./assets/img/montaña.jpg" alt="Exposición de Arte Asturiano">
+                <div class="historial-card-header-info">
+                    <h2>Exposición de Arte Asturiano Contemporáneo</h2>
+                    <div class="meta">
+                        <span class="badge-cat cultura">Cultura</span>
+                        <span class="badge-fin">Finalizado</span>
+                    </div>
+                    <span class="fecha">📅 20 de enero de 2026 · Museo de Bellas Artes, Oviedo</span>
+                </div>
+            </div>
+            <div class="historial-card-desc">
+                <p>Muestra de obras de más de 30 artistas asturianos emergentes en el Museo de Bellas Artes de Asturias. La exposición exploró la identidad asturiana a través de instalaciones, pinturas y fotografía contemporánea, con especial atención al paisaje natural y la cultura minera.</p>
+            </div>
+            <div class="resenas-titulo">🗣️ Reseñas de asistentes</div>
+            <div class="resenas-lista">
+                <div class="resena positiva">
+                    <div class="resena-avatar">I</div>
+                    <div class="resena-body">
+                        <div class="resena-autor">Isabel C. · Oviedo</div>
+                        <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                        <p>Una exposición imprescindible. Las instalaciones sobre la minería asturiana me dejaron sin palabras. Qué importante es apoyar el arte local y darle esta visibilidad. El comisariado fue brillante.</p>
+                    </div>
+                </div>
+                <div class="resena positiva">
+                    <div class="resena-avatar">T</div>
+                    <div class="resena-body">
+                        <div class="resena-autor">Tomás A. · Langreo</div>
+                        <div class="estrellas">⭐⭐⭐⭐</div>
+                        <p>Me sorprendió la calidad del trabajo de artistas tan jóvenes. La sección de fotografía era especialmente poderosa. Fui dos veces durante el mes que duró la exposición. Un poco más de información en las cartelas hubiera venido bien.</p>
+                    </div>
+                </div>
+                <div class="resena negativa">
+                    <div class="resena-avatar">N</div>
+                    <div class="resena-body">
+                        <div class="resena-autor">Nuria B. · Avilés</div>
+                        <div class="estrellas">⭐⭐</div>
+                        <p>Esperaba más variedad temática. La mayoría de las obras giraban en torno a los mismos conceptos y se hacía repetitivo. Además, la iluminación de algunas salas era muy deficiente, dificultando apreciar ciertos detalles.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ====== CULTURA 2 ====== -->
+        <article class="historial-card cultura" id="teatro-clasico">
+            <div class="historial-card-header">
+                <img src="./assets/img/Mercado Medieval.jpg" alt="Festival de Teatro Clásico">
+                <div class="historial-card-header-info">
+                    <h2>Festival de Teatro Clásico de Gijón</h2>
+                    <div class="meta">
+                        <span class="badge-cat cultura">Cultura</span>
+                        <span class="badge-fin">Finalizado</span>
+                    </div>
+                    <span class="fecha">📅 10 de febrero de 2026 · Teatro Jovellanos, Gijón</span>
+                </div>
+            </div>
+            <div class="historial-card-desc">
+                <p>Representaciones de obras del Siglo de Oro español a cargo de tres compañías nacionales en el histórico Teatro Jovellanos de Gijón. Se representaron La vida es sueño, El burlador de Sevilla y Fuenteovejuna durante tres fines de semana consecutivos.</p>
+            </div>
+            <div class="resenas-titulo">🗣️ Reseñas de asistentes</div>
+            <div class="resenas-lista">
+                <div class="resena positiva">
+                    <div class="resena-avatar">B</div>
+                    <div class="resena-body">
+                        <div class="resena-autor">Beatriz L. · Gijón</div>
+                        <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                        <p>La representación de Fuenteovejuna fue absolutamente soberbia. El elenco estuvo brillante y la puesta en escena muy cuidada. El Teatro Jovellanos es el escenario perfecto para este tipo de obras. Cultura de primer nivel.</p>
+                    </div>
+                </div>
+                <div class="resena positiva">
+                    <div class="resena-avatar">F</div>
+                    <div class="resena-body">
+                        <div class="resena-autor">Fernando O. · Oviedo</div>
+                        <div class="estrellas">⭐⭐⭐⭐</div>
+                        <p>Fui con mi familia y fue una experiencia enriquecedora para los más jóvenes. Agradezco que hubiera una charla introductoria antes de cada obra para contextualizar. Sería genial que este festival se ampliara a más fechas.</p>
+                    </div>
+                </div>
+                <div class="resena negativa">
+                    <div class="resena-avatar">G</div>
+                    <div class="resena-body">
+                        <div class="resena-autor">Gloria H. · Mieres</div>
+                        <div class="estrellas">⭐⭐⭐</div>
+                        <p>La actuación de La vida es sueño me pareció irregular: algunos actores muy buenos y otros bastante flojos. El ritmo de la obra se hacía lento en el segundo acto. Las entradas tampoco eran baratas para lo que ofrecía la compañía principal.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- ====== CULTURA 3 ====== -->
+        <article class="historial-card cultura" id="feria-libro">
+            <div class="historial-card-header">
+                <img src="./assets/img/semana.jpg" alt="Feria del Libro de Oviedo">
+                <div class="historial-card-header-info">
+                    <h2>Feria del Libro de Oviedo</h2>
+                    <div class="meta">
+                        <span class="badge-cat cultura">Cultura</span>
+                        <span class="badge-fin">Finalizado</span>
+                    </div>
+                    <span class="fecha">📅 1 de marzo de 2026 · Parque San Francisco, Oviedo</span>
+                </div>
+            </div>
+            <div class="historial-card-desc">
+                <p>Encuentro literario con firmas de autores, presentaciones y actividades para fomentar la lectura en el emblemático Parque San Francisco de Oviedo. Participaron más de 50 editoriales y autores asturianos, nacionales e internacionales durante cinco días de celebración.</p>
+            </div>
+            <div class="resenas-titulo">🗣️ Reseñas de asistentes</div>
+            <div class="resenas-lista">
+                <div class="resena positiva">
+                    <div class="resena-avatar">V</div>
+                    <div class="resena-body">
+                        <div class="resena-autor">Valentina R. · Oviedo</div>
+                        <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                        <p>Conseguí que me firmaran tres libros y asistí a dos presentaciones increíbles. El ambiente del Parque San Francisco es ideal para este evento. Me encantó la sección dedicada a autores asturianos emergentes. ¡Volveré el año que viene!</p>
+                    </div>
+                </div>
+                <div class="resena positiva">
+                    <div class="resena-avatar">H</div>
+                    <div class="resena-body">
+                        <div class="resena-autor">Hugo M. · Gijón</div>
+                        <div class="estrellas">⭐⭐⭐⭐</div>
+                        <p>Gran selección de títulos y precios con descuentos interesantes. Las actividades para niños estuvieron muy bien organizadas. Solo le quito una estrella porque los días de lluvia el recinto quedaba bastante incómodo sin protección suficiente.</p>
+                    </div>
+                </div>
+                <div class="resena negativa">
+                    <div class="resena-avatar">O</div>
+                    <div class="resena-body">
+                        <div class="resena-autor">Olga P. · Langreo</div>
+                        <div class="estrellas">⭐⭐</div>
+                        <p>Decepcionante en cuanto a la variedad de géneros. Todo era narrativa española contemporánea y apenas había novela gráfica, ciencia ficción o manga. El público joven no tenía mucho donde elegir. Deberían diversificar la oferta.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="social-links">
+            <a href="#" aria-label="Instagram">📸 Instagram</a>
+            <a href="#" aria-label="Facebook">📘 Facebook</a>
+            <a href="#" aria-label="Twitter/X">🐦 Twitter</a>
+            <a href="#" aria-label="YouTube">▶️ YouTube</a>
+        </div>
+        <p>&copy; 2026 Happiness&amp;Co Asturias. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
