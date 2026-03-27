@@ -550,3 +550,249 @@ footer p {
     .events-page-grid { grid-template-columns: 1fr; }
     .events-banner-content h1 { font-size: 1.8rem; }
 }
+/* ================================================
+   PÁGINA DE DETALLE DE EVENTO
+   ================================================ */
+
+/* ── Hero ── */
+.evento-hero {
+    position: relative;
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+}
+.evento-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.80) 0%, rgba(0,0,0,0.20) 60%, transparent 100%);
+}
+.evento-hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 40px 48px;
+    color: #fff;
+}
+.evento-hero-content h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin: 10px 0 14px;
+    line-height: 1.2;
+}
+.evento-hero-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 0.95rem;
+    color: #e2e8f0;
+}
+.evento-hero-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ── Layout principal ── */
+.evento-detalle-wrapper {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 40px;
+    align-items: start;
+}
+
+/* ── Secciones del main ── */
+.evento-seccion {
+    margin-bottom: 40px;
+}
+.evento-seccion h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f0f0f0;
+}
+.evento-seccion p {
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 12px;
+    font-size: 0.97rem;
+}
+
+/* ── Lista de actividades ── */
+.evento-lista {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.evento-lista li {
+    background: #f7fafc;
+    border-radius: 8px;
+    padding: 10px 16px;
+    color: #2d3748;
+    font-size: 0.95rem;
+    border-left: 3px solid #6c63ff;
+}
+
+/* ── Programa ── */
+.evento-programa {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-left: 3px solid #e2e8f0;
+    padding-left: 20px;
+}
+.programa-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px dashed #f0f0f0;
+    position: relative;
+}
+.programa-item::before {
+    content: '';
+    position: absolute;
+    left: -26px;
+    top: 18px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #6c63ff;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #6c63ff;
+}
+.programa-hora {
+    font-weight: 700;
+    color: #6c63ff;
+    font-size: 0.88rem;
+    min-width: 55px;
+    padding-top: 2px;
+}
+.programa-desc {
+    color: #4a5568;
+    font-size: 0.93rem;
+    line-height: 1.5;
+}
+
+/* ── Aside cards ── */
+.evento-detalle-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky;
+    top: 90px;
+}
+.aside-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+    padding: 22px 24px;
+    border-top: 4px solid #6c63ff;
+}
+.aside-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    
+}
+
+/* Info lista del aside */
+.aside-info-lista {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.aside-info-lista li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #718096;
+}
+.aside-info-lista li strong {
+    color: #2d3748;
+    text-align: right;
+}
+
+/* Mapa placeholder */
+.aside-card--mapa .mapa-placeholder {
+    background: #edf2f7;
+    border-radius: 10px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #718096;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Compartir */
+.share-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.share-btn {
+    display: block;
+    text-align: center;
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+.share-btn:hover { opacity: 0.85; }
+.share-btn.whatsapp { background: #25d366; color: #fff; }
+.share-btn.twitter  { background: #1da1f2; color: #fff; }
+.share-btn.facebook { background: #1877f2; color: #fff; }
+
+/* ── Botón volver ── */
+.evento-volver {
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    padding: 0 24px;
+}
+.btn-volver {
+    display: inline-block;
+    padding: 10px 22px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    color: #4a5568;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.25s ease;
+}
+.btn-volver:hover {
+    background: #6c63ff;
+    color: #fff;
+    border-color: #6c63ff;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .evento-detalle-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .evento-detalle-aside { position: static; }
+    .evento-hero-content { padding: 24px; }
+    .evento-hero-content h1 { font-size: 1.8rem; }
+    .evento-hero-meta { gap: 12px; font-size: 0.85rem; }
+}

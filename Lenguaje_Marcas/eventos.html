@@ -29,7 +29,6 @@
             </select>
         </div>
     </header>
-
     <!-- ===== BANNER EVENTOS ===== -->
     <section class="events-banner">
         <div class="events-banner-overlay"></div>
@@ -41,16 +40,14 @@
 
     <!-- ===== FILTROS ===== -->
     <div class="events-filters">
-        <button class="filter-btn active" onclick="filterEvents('todos')">Todos</button>
-        <button class="filter-btn" onclick="filterEvents('cultura')">Cultura</button>
-        <button class="filter-btn" onclick="filterEvents('musica')">Música</button>
-        <button class="filter-btn" onclick="filterEvents('gastronomia')">Gastronomía</button>
+        <button class="filter-btn active" onclick="filterEvents('todos', event)">Todos</button>
+        <button class="filter-btn" onclick="filterEvents('cultura', event)">Cultura</button>
+        <button class="filter-btn" onclick="filterEvents('musica', event)">Música</button>
+        <button class="filter-btn" onclick="filterEvents('gastronomia', event)">Gastronomía</button>
     </div>
 
     <!-- ===== GRID DE EVENTOS ===== -->
     <section class="events-page-grid">
-
-        <!-- ======= EVENTOS ACTIVOS ======= -->
 
         <article class="events-page-card" data-category="cultura">
             <img src="./assets/img/montaña.jpg" alt="Romería de San Marcos">
@@ -59,7 +56,7 @@
                 <span class="event-date">20 Abril 2026</span>
                 <h3>Romería de San Marcos</h3>
                 <p>Celebración tradicional con música folk y gastronomía asturiana en el valle.</p>
-                <a href="#" class="btn-evento">Ver evento &rarr;</a>
+                <a href="./eventos/romeriadesanmarcos.html" class="btn-evento">Ver evento →</a>
             </div>
         </article>
 
@@ -184,80 +181,6 @@
             </div>
         </article>
 
-        <!-- ======= EVENTOS VENCIDOS ======= -->
-
-        <!-- MÚSICA VENCIDA (1) -->
-        <article class="events-page-card vencido" data-category="musica">
-            <img src="./assets/img/musica4.jpg" alt="Concierto de gaitas">
-            <div class="events-page-card-body">
-                <span class="event-tag musica">Música</span>
-                <span class="event-date">8 Febrero 2026</span>
-                <span class="event-badge-vencido">Finalizado</span>
-                <h3>Concierto de Gaitas en Oviedo</h3>
-                <p>Gran concierto de gaita asturiana en el Auditorio Príncipe Felipe con los mejores gaiteros del Principado.</p>
-                <a href="./historial.html#concierto-gaitas" class="btn-evento btn-evento--vencido">Ver detalles &rarr;</a>            </div>
-        </article>
-
-        <!-- GASTRONOMÍA VENCIDA (2) -->
-        <article class="events-page-card vencido" data-category="gastronomia">
-            <img src="./assets/img/gastronomia1.jpg" alt="Ruta de la Sidra">
-            <div class="events-page-card-body">
-                <span class="event-tag gastronomia">Gastronomía</span>
-                <span class="event-date">14 Enero 2026</span>
-                <span class="event-badge-vencido">Finalizado</span>
-                <h3>Ruta de la Sidra Natural de Gijón</h3>
-                <p>Recorrido por los mejores lllagares y sidrерías de Gijón para degustar la sidra natural asturiana.</p>
-                <a href="./historial.html#ruta-sidra" class="btn-evento btn-evento--vencido">Ver detalles &rarr;</a>            </div>
-        </article>
-
-        <article class="events-page-card vencido" data-category="gastronomia">
-            <img src="./assets/img/gastronomia2.jpg" alt="Jornadas del Pote Asturiano">
-            <div class="events-page-card-body">
-                <span class="event-tag gastronomia">Gastronomía</span>
-                <span class="event-date">3 Marzo 2026</span>
-                <span class="event-badge-vencido">Finalizado</span>
-                <h3>Jornadas del Pote Asturiano</h3>
-                <p>Restaurantes de toda Asturias presentaron sus versiones del pote tradicional en este evento celebrado en Avilés.</p>
-                <a href="./historial.html#jornadas-pote" class="btn-evento btn-evento--vencido">Ver detalles &rarr;</a>
-            </div>
-        </article>
-
-        <!-- CULTURA VENCIDA (3) -->
-        <article class="events-page-card vencido" data-category="cultura">
-            <img src="./assets/img/montaña.jpg" alt="Exposición de Arte Asturiano">
-            <div class="events-page-card-body">
-                <span class="event-tag cultura">Cultura</span>
-                <span class="event-date">20 Enero 2026</span>
-                <span class="event-badge-vencido">Finalizado</span>
-                <h3>Exposición de Arte Asturiano Contemporáneo</h3>
-                <p>Muestra de obras de artistas asturianos emergentes en el Museo de Bellas Artes de Asturias en Oviedo.</p>
-                <a href="./historial.html#expo-arte" class="btn-evento btn-evento--vencido">Ver detalles &rarr;</a>
-            </div>
-        </article>
-
-        <article class="events-page-card vencido" data-category="cultura">
-            <img src="./assets/img/Mercado Medieval.jpg" alt="Festival de Teatro Clásico">
-            <div class="events-page-card-body">
-                <span class="event-tag cultura">Cultura</span>
-                <span class="event-date">10 Febrero 2026</span>
-                <span class="event-badge-vencido">Finalizado</span>
-                <h3>Festival de Teatro Clásico de Gijón</h3>
-                <p>Representaciones de obras del Siglo de Oro español a cargo de compañías nacionales en el Teatro Jovellanos.</p>
-                <a href="./historial.html#teatro-clasico" class="btn-evento btn-evento--vencido">Ver detalles &rarr;</a>
-            </div>
-        </article>
-
-        <article class="events-page-card vencido" data-category="cultura">
-            <img src="./assets/img/semana.jpg" alt="Feria del Libro de Oviedo">
-            <div class="events-page-card-body">
-                <span class="event-tag cultura">Cultura</span>
-                <span class="event-date">1 Marzo 2026</span>
-                <span class="event-badge-vencido">Finalizado</span>
-                <h3>Feria del Libro de Oviedo</h3>
-                <p>Encuentro literario con firmas de autores, presentaciones y actividades para fomentar la lectura en el Parque San Francisco.</p>
-                <a href="./historial.html#feria-libro" class="btn-evento btn-evento--vencido">Ver detalles &rarr;</a>
-        </article>
-
     </section>
 
     <!-- ===== FOOTER ===== -->
@@ -272,12 +195,12 @@
     </footer>
 
     <script>
-        function filterEvents(category) {
+        function filterEvents(category, e) {
             const cards = document.querySelectorAll('.events-page-card');
             const buttons = document.querySelectorAll('.filter-btn');
 
             buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            e.target.classList.add('active');
 
             cards.forEach(card => {
                 if (category === 'todos' || card.dataset.category === category) {
