@@ -78,20 +78,11 @@
                 <span class="event-date">5 Mayo 2026</span>
                 <h3>Festival de las Llamas, Oviedo</h3>
                 <p>Espectáculo de música y fuego con artistas nacionales e internacionales al aire libre.</p>
-                <a href="#" class="btn-evento">Ver evento &rarr;</a>
+                <a href="./eventos/festivaldellamas.html" class="btn-evento">Ver evento &rarr;</a>
             </div>
         </article>
 
-        <article class="events-page-card" data-category="musica">
-            <img src="./assets/img/musica3.jpg" alt="Baile flamenco en plaza">
-            <div class="events-page-card-body">
-                <span class="event-tag musica">Música</span>
-                <span class="event-date">12 Mayo 2026</span>
-                <h3>Noche Flamenca en Gijón</h3>
-                <p>Actuaciones de flamenco en vivo en la plaza mayor de Gijón con bailaoras de primer nivel.</p>
-                <a href="#" class="btn-evento">Ver evento &rarr;</a>
-            </div>
-        </article>
+        
 
         <article class="events-page-card" data-category="musica">
             <img src="./assets/img/musica2.jpg" alt="Concierto de jazz">
@@ -169,7 +160,16 @@
                 <a href="#" class="btn-evento">Ver evento &rarr;</a>
             </div>
         </article>
-
+        <article class="events-page-card" data-category="musica">
+            <img src="./assets/img/musica3.jpg" alt="Baile flamenco en plaza">
+            <div class="events-page-card-body">
+                <span class="event-tag musica">Música</span>
+                <span class="event-date">12 Mayo 2026</span>
+                <h3>Noche Flamenca en Gijón</h3>
+                <p>Actuaciones de flamenco en vivo en la plaza mayor de Gijón con bailaoras de primer nivel.</p>
+                <a href="#" class="btn-evento">Ver evento &rarr;</a>
+            </div>
+        </article>
         <article class="events-page-card" data-category="cultura">
             <img src="./assets/img/Mercado Medieval.jpg" alt="Mercado Medieval">
             <div class="events-page-card-body">
@@ -195,22 +195,37 @@
     </footer>
 
     <script>
-        function filterEvents(category, e) {
-            const cards = document.querySelectorAll('.events-page-card');
-            const buttons = document.querySelectorAll('.filter-btn');
+        let pos = 0;
+        const track = document.getElementById('galeriaTrack');
+        const dotsBox = document.getElementById('galeriaDots');
+        const slides = track.querySelectorAll('.aside-slide');
+        const total = slides.length;
 
-            buttons.forEach(btn => btn.classList.remove('active'));
-            e.target.classList.add('active');
+        slides.forEach((_, i) => {
+            const d = document.createElement('button');
+            d.className = 'aside-dot' + (i === 0 ? ' active' : '');
+            d.setAttribute('aria-label', 'Ir a imagen ' + (i + 1));
+            d.onclick = () => irA(i);
+            dotsBox.appendChild(d);
+        });
 
-            cards.forEach(card => {
-                if (category === 'todos' || card.dataset.category === category) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+        function actualizar() {
+            track.style.transform = `translateX(-${pos * 100}%)`;
+            dotsBox.querySelectorAll('.aside-dot').forEach((d, i) =>
+                d.classList.toggle('active', i === pos)
+            );
         }
+
+        function moverGaleria(dir) {
+            pos = (pos + dir + total) % total;
+            actualizar();
+        }
+
+        function irA(i) { pos = i; actualizar(); }
+
+        setInterval(() => moverGaleria(1), 4000);
     </script>
+
 
 </body>
 </html>
