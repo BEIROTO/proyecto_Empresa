@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival de la Fabada Asturiana | Happiness&Co Asturias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="main-header">
+        <img src="../assets/img/logo.png" alt="Happiness & Co logo" class="logo">
+        <nav class="main-nav">
+            <a href="../index.html">Inicio</a>
+            <a href="../eventos.html" class="nav-active">Eventos</a>
+            <a href="../historial.html">Historial de eventos</a>
+            <a href="#">Sobre nosotros</a>
+            <a href="#">Fuentes</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <div class="lang-switch">
+            <select id="languageSelect">
+                <option value="es">ES 🇪🇸</option>
+                <option value="en">EN 🇬🇧</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- ===== HERO DEL EVENTO ===== -->
+    <section class="evento-hero" style="background-image: url('../assets/img/gastronomia2.jpg');">
+        <div class="evento-hero-overlay"></div>
+        <div class="evento-hero-content">
+            <span class="event-tag gastronomia">Gastronomía</span>
+            <h1>Festival de la Fabada Asturiana</h1>
+            <div class="evento-hero-meta">
+                <span>📅 1 de Junio de 2026</span>
+                <span>📍 Oviedo, Asturias</span>
+                <span>🕐 11:00h</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <div class="evento-detalle-wrapper">
+
+        <!-- Columna izquierda -->
+        <main class="evento-detalle-main">
+
+            <section class="evento-seccion">
+                <h2>Sobre el evento</h2>
+                <p>El Festival de la Fabada Asturiana es el homenaje más sentido al plato más representativo de la cocina asturiana. Durante una jornada entera, los mejores restaurantes de la región se miden en un concurso que premia la fidelidad a la receta tradicional, la calidad de la fabes de la Granja y el punto perfecto del compango: chorizo, morcilla y lacón elaborados artesanalmente.</p>
+                <p>Más allá del concurso, el festival es una fiesta popular donde el público puede degustar fabadas de todos los participantes, votar su favorita y descubrir los secretos de un guiso que ha conquistado paladares en todo el mundo. Un evento que reivindica el orgullo de la gastronomía asturiana y el trabajo de sus productores y cocineros.</p>
+            </section>
+
+            <section class="evento-seccion">
+                <h2>¿Qué encontrarás?</h2>
+                <ul class="evento-lista">
+                    <li>Concurso oficial entre restaurantes asturianos al mejor pote de fabada tradicional</li>
+                    <li>Degustación abierta al público de todas las fabadas participantes</li>
+                    <li>Voto popular para elegir la fabada favorita de los asistentes</li>
+                    <li>Showcooking: los secretos del compango perfecto con maestros charcuteros</li>
+                    <li>Puesto de venta de fabes de la Granja y productos del compango artesano</li>
+                    <li>Sidra natural y bebidas tradicionales asturianas</li>
+                </ul>
+            </section>
+
+            <section class="evento-seccion">
+                <h2>Programa del día</h2>
+                <div class="evento-programa">
+                    <div class="programa-item">
+                        <span class="programa-hora">10:00h</span>
+                        <span class="programa-desc">Apertura del festival y preparación de los potes por los restaurantes participantes</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">11:00h</span>
+                        <span class="programa-desc">Inicio de la degustación popular: apertura de todos los puestos</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">12:30h</span>
+                        <span class="programa-desc">Showcooking: "El compango artesano, alma de la fabada"</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">14:00h</span>
+                        <span class="programa-desc">Deliberación del jurado de expertos y cierre del voto popular</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">16:00h</span>
+                        <span class="programa-desc">Entrega de premios: mejor fabada tradicional de Asturias 2026</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">16:30h</span>
+                        <span class="programa-desc">Showcooking: "Versiones contemporáneas de la fabada asturiana"</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">18:00h</span>
+                        <span class="programa-desc">Cierre del Festival de la Fabada Asturiana</span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Columna derecha -->
+        <aside class="evento-detalle-aside">
+
+            <!-- SLIDER -->
+            <div class="aside-slider">
+                <div class="aside-slider-track" id="galeriaTrack">
+                    <div class="aside-slide"><img src="../assets/img/festivaldefabada/img1.jpg" alt="Pote de fabada asturiana tradicional" loading="lazy"></div>
+                    <div class="aside-slide"><img src="../assets/img/festivaldefabada/img2.jpg" alt="Concurso de fabada en Asturias" loading="lazy"></div>
+                    <div class="aside-slide"><img src="../assets/img/festivaldefabada/img3.jpg" alt="Compango artesano asturiano" loading="lazy"></div>
+                </div>
+                <button class="aside-arrow aside-prev" onclick="moverGaleria(-1)" aria-label="Anterior">&#8249;</button>
+                <button class="aside-arrow aside-next" onclick="moverGaleria(1)" aria-label="Siguiente">&#8250;</button>
+                <div class="aside-dots" id="galeriaDots"></div>
+            </div>
+
+            <!-- TARJETA INFORMACIÓN -->
+            <div class="aside-card">
+                <h3>Información</h3>
+                <ul class="aside-info-lista">
+                    <li><span>Fecha</span><strong>1 Junio 2026</strong></li>
+                    <li><span>Hora</span><strong>10:00h – 18:00h</strong></li>
+                    <li><span>Lugar</span><strong>Centro de Oviedo</strong></li>
+                    <li><span>Municipio</span><strong>Oviedo, Asturias</strong></li>
+                    <li><span>Entrada</span><strong>Gratuita</strong></li>
+                    <li><span>Categoría</span><strong>Gastronomía</strong></li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- ===== VOLVER ===== -->
+    <div class="evento-volver">
+        <a href="../eventos.html" class="btn-volver">&larr; Volver a Eventos</a>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="social-links">
+            <a href="#" aria-label="Instagram"> Instagram</a>
+            <a href="#" aria-label="Facebook"> Facebook</a>
+            <a href="#" aria-label="Twitter/X"> Twitter</a>
+            <a href="#" aria-label="YouTube"> YouTube</a>
+        </div>
+        <p>&copy; 2026 Happiness&amp;Co Asturias. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        let pos = 0;
+        const track = document.getElementById('galeriaTrack');
+        const dotsBox = document.getElementById('galeriaDots');
+        const slides = track.querySelectorAll('.aside-slide');
+        const total = slides.length;
+
+        slides.forEach((_, i) => {
+            const d = document.createElement('button');
+            d.className = 'aside-dot' + (i === 0 ? ' active' : '');
+            d.setAttribute('aria-label', 'Ir a imagen ' + (i + 1));
+            d.onclick = () => irA(i);
+            dotsBox.appendChild(d);
+        });
+
+        function actualizar() {
+            track.style.transform = `translateX(-${pos * 100}%)`;
+            dotsBox.querySelectorAll('.aside-dot').forEach((d, i) =>
+                d.classList.toggle('active', i === pos)
+            );
+        }
+
+        function moverGaleria(dir) {
+            pos = (pos + dir + total) % total;
+            actualizar();
+        }
+
+        function irA(i) { pos = i; actualizar(); }
+
+        setInterval(() => moverGaleria(1), 4000);
+    </script>
+
+</body>
+</html>
