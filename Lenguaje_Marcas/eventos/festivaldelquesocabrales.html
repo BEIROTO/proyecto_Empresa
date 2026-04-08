@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feria del Queso Cabrales | Happiness&Co Asturias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="main-header">
+        <img src="../assets/img/logo.png" alt="Happiness & Co logo" class="logo">
+        <nav class="main-nav">
+            <a href="../index.html">Inicio</a>
+            <a href="../eventos.html" class="nav-active">Eventos</a>
+            <a href="../historial.html">Historial de eventos</a>
+            <a href="#">Sobre nosotros</a>
+            <a href="#">Fuentes</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <div class="lang-switch">
+            <select id="languageSelect">
+                <option value="es">ES 🇪🇸</option>
+                <option value="en">EN 🇬🇧</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- ===== HERO DEL EVENTO ===== -->
+    <section class="evento-hero" style="background-image: url('../assets/img/gastronomia1.jpg');">
+        <div class="evento-hero-overlay"></div>
+        <div class="evento-hero-content">
+            <span class="event-tag gastronomia">Gastronomía</span>
+            <h1>Feria del Queso Cabrales</h1>
+            <div class="evento-hero-meta">
+                <span>📅 18 de Mayo de 2026</span>
+                <span>📍 Arenas de Cabrales, Asturias</span>
+                <span>🕐 10:00h</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <div class="evento-detalle-wrapper">
+
+        <!-- Columna izquierda -->
+        <main class="evento-detalle-main">
+
+            <section class="evento-seccion">
+                <h2>Sobre el evento</h2>
+                <p>La Feria del Queso Cabrales es uno de los eventos gastronómicos más emblemáticos de Asturias, celebrada cada año en Arenas de Cabrales, en el corazón del Parque Nacional de los Picos de Europa. Esta feria reúne a los mejores queseros de la comarca para presentar y concursar con sus piezas de Cabrales, un queso de cueva con Denominación de Origen Protegida reconocido internacionalmente por su potente sabor y su característico veteado azul-verdoso.</p>
+                <p>Durante toda la jornada, el público puede degustar y comprar directamente a los elaboradores, conocer de primera mano el proceso de maduración en las cuevas naturales de la sierra y participar en la subasta del queso ganador del concurso, que año tras año alcanza precios récord como símbolo del orgullo quesero asturiano.</p>
+            </section>
+
+            <section class="evento-seccion">
+                <h2>¿Qué encontrarás?</h2>
+                <ul class="evento-lista">
+                    <li>Concurso oficial al mejor queso Cabrales del año con jurado especializado</li>
+                    <li>Degustación y venta directa de queso Cabrales de los elaboradores locales</li>
+                    <li>Subasta pública de la pieza ganadora del concurso</li>
+                    <li>Visita guiada a una cueva de maduración de queso Cabrales</li>
+                    <li>Maridaje de Cabrales con sidra natural y vinos asturianos</li>
+                    <li>Mercado de productos artesanos de la comarca de Cabrales</li>
+                </ul>
+            </section>
+
+            <section class="evento-seccion">
+                <h2>Programa del día</h2>
+                <div class="evento-programa">
+                    <div class="programa-item">
+                        <span class="programa-hora">09:00h</span>
+                        <span class="programa-desc">Recepción de piezas y registro de participantes en el concurso</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">10:00h</span>
+                        <span class="programa-desc">Apertura de la feria y mercado de productos artesanos</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">11:00h</span>
+                        <span class="programa-desc">Visitas guiadas a la cueva de maduración de queso Cabrales</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">12:30h</span>
+                        <span class="programa-desc">Cata maridaje: Queso Cabrales con sidra natural y vinos asturianos</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">14:00h</span>
+                        <span class="programa-desc">Deliberación del jurado y anuncio del queso ganador</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">16:00h</span>
+                        <span class="programa-desc">Entrega de premios y subasta pública de la pieza ganadora</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">17:30h</span>
+                        <span class="programa-desc">Música tradicional asturiana y cierre de la feria</span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Columna derecha -->
+        <aside class="evento-detalle-aside">
+
+            <!-- SLIDER -->
+            <div class="aside-slider">
+                <div class="aside-slider-track" id="galeriaTrack">
+                    <div class="aside-slide"><img src="../assets/img/feriadelquesocabrales/img1.jpg" alt="Queso Cabrales en la feria de Arenas" loading="lazy"></div>
+                    <div class="aside-slide"><img src="../assets/img/feriadelquesocabrales/img2.jpg" alt="Cueva de maduración de queso Cabrales" loading="lazy"></div>
+                    <div class="aside-slide"><img src="../assets/img/feriadelquesocabrales/img3.jpg" alt="Subasta del queso Cabrales ganador" loading="lazy"></div>
+                </div>
+                <button class="aside-arrow aside-prev" onclick="moverGaleria(-1)" aria-label="Anterior">&#8249;</button>
+                <button class="aside-arrow aside-next" onclick="moverGaleria(1)" aria-label="Siguiente">&#8250;</button>
+                <div class="aside-dots" id="galeriaDots"></div>
+            </div>
+
+            <!-- TARJETA INFORMACIÓN -->
+            <div class="aside-card">
+                <h3>Información</h3>
+                <ul class="aside-info-lista">
+                    <li><span>Fecha</span><strong>18 Mayo 2026</strong></li>
+                    <li><span>Hora</span><strong>10:00h – 18:00h</strong></li>
+                    <li><span>Lugar</span><strong>Arenas de Cabrales</strong></li>
+                    <li><span>Municipio</span><strong>Cabrales, Asturias</strong></li>
+                    <li><span>Entrada</span><strong>Gratuita</strong></li>
+                    <li><span>Categoría</span><strong>Gastronomía</strong></li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- ===== VOLVER ===== -->
+    <div class="evento-volver">
+        <a href="../eventos.html" class="btn-volver">&larr; Volver a Eventos</a>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="social-links">
+            <a href="#" aria-label="Instagram"> Instagram</a>
+            <a href="#" aria-label="Facebook"> Facebook</a>
+            <a href="#" aria-label="Twitter/X"> Twitter</a>
+            <a href="#" aria-label="YouTube"> YouTube</a>
+        </div>
+        <p>&copy; 2026 Happiness&amp;Co Asturias. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        let pos = 0;
+        const track = document.getElementById('galeriaTrack');
+        const dotsBox = document.getElementById('galeriaDots');
+        const slides = track.querySelectorAll('.aside-slide');
+        const total = slides.length;
+
+        slides.forEach((_, i) => {
+            const d = document.createElement('button');
+            d.className = 'aside-dot' + (i === 0 ? ' active' : '');
+            d.setAttribute('aria-label', 'Ir a imagen ' + (i + 1));
+            d.onclick = () => irA(i);
+            dotsBox.appendChild(d);
+        });
+
+        function actualizar() {
+            track.style.transform = `translateX(-${pos * 100}%)`;
+            dotsBox.querySelectorAll('.aside-dot').forEach((d, i) =>
+                d.classList.toggle('active', i === pos)
+            );
+        }
+
+        function moverGaleria(dir) {
+            pos = (pos + dir + total) % total;
+            actualizar();
+        }
+
+        function irA(i) { pos = i; actualizar(); }
+
+        setInterval(() => moverGaleria(1), 4000);
+    </script>
+
+</body>
+</html>
