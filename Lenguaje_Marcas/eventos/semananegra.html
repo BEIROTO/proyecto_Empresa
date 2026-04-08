@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana Negra de Gijón | Happiness&Co Asturias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="main-header">
+        <img src="../assets/img/logo.png" alt="Happiness & Co logo" class="logo">
+        <nav class="main-nav">
+            <a href="../index.html">Inicio</a>
+            <a href="../eventos.html" class="nav-active">Eventos</a>
+            <a href="../historial.html">Historial de eventos</a>
+            <a href="#">Sobre nosotros</a>
+            <a href="#">Fuentes</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <div class="lang-switch">
+            <select id="languageSelect">
+                <option value="es">ES 🇪🇸</option>
+                <option value="en">EN 🇬🇧</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- ===== HERO DEL EVENTO ===== -->
+    <section class="evento-hero" style="background-image: url('../assets/img/semana.jpg');">
+        <div class="evento-hero-overlay"></div>
+        <div class="evento-hero-content">
+            <span class="event-tag cultura">Cultura</span>
+            <h1>Semana Negra de Gijón</h1>
+            <div class="evento-hero-meta">
+                <span>📅 10 de Mayo de 2026</span>
+                <span>📍 Gijón, Asturias</span>
+                <span>🕐 10:00h</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <div class="evento-detalle-wrapper">
+
+        <!-- Columna izquierda -->
+        <main class="evento-detalle-main">
+
+            <section class="evento-seccion">
+                <h2>Sobre el evento</h2>
+                <p>La Semana Negra de Gijón es uno de los festivales literarios y culturales más importantes de España y referente internacional del género negro y policíaco. Cada año, el Puerto Deportivo de Gijón se transforma durante varios días en un gran espacio festivo donde la literatura, el cine, el teatro, la música y la gastronomía conviven bajo un mismo techo de cultura popular.</p>
+                <p>Fundada en 1988 por el escritor asturiano Paco Ignacio Taibo II, la Semana Negra reúne a autores nacionales e internacionales de primer nivel, periodistas, cineastas y lectores apasionados en un ambiente único que mezcla el rigor intelectual con la fiesta y el disfrute colectivo. Un evento que ha convertido a Gijón en capital mundial de la novela negra durante una semana al año.</p>
+            </section>
+
+            <section class="evento-seccion">
+                <h2>¿Qué encontrarás?</h2>
+                <ul class="evento-lista">
+                    <li>Presentaciones y firmas de libros con autores nacionales e internacionales</li>
+                    <li>Mesas redondas y debates sobre literatura negra y de género</li>
+                    <li>Proyecciones de cine negro clásico y contemporáneo</li>
+                    <li>Espectáculos de teatro, música y performances culturales</li>
+                    <li>Feria del libro con librerías especializadas en género negro</li>
+                    <li>Zona gastronómica y bares temáticos en el recinto ferial</li>
+                </ul>
+            </section>
+
+            <section class="evento-seccion">
+                <h2>Programa del día</h2>
+                <div class="evento-programa">
+                    <div class="programa-item">
+                        <span class="programa-hora">10:00h</span>
+                        <span class="programa-desc">Apertura de la feria del libro y del recinto ferial</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">11:30h</span>
+                        <span class="programa-desc">Mesa redonda: "El noir europeo del siglo XXI"</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">13:00h</span>
+                        <span class="programa-desc">Presentación y firma de libros: autores invitados internacionales</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">17:00h</span>
+                        <span class="programa-desc">Proyección: ciclo de cine negro contemporáneo</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">19:00h</span>
+                        <span class="programa-desc">Conferencia magistral: autor estrella de la edición 2026</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">21:00h</span>
+                        <span class="programa-desc">Concierto y espectáculo cultural en el escenario principal</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">23:00h</span>
+                        <span class="programa-desc">Cierre de la jornada y ambiente nocturno en el recinto</span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Columna derecha -->
+        <aside class="evento-detalle-aside">
+
+            <!-- SLIDER -->
+            <div class="aside-slider">
+                <div class="aside-slider-track" id="galeriaTrack">
+                    <div class="aside-slide"><img src="../assets/img/semananegra/img1.jpg" alt="Ambiente de la Semana Negra de Gijón" loading="lazy"></div>
+                    <div class="aside-slide"><img src="../assets/img/semananegra/img2.jpg" alt="Presentación de autores en la Semana Negra" loading="lazy"></div>
+                    <div class="aside-slide"><img src="../assets/img/semananegra/img3.jpg" alt="Feria del libro en el Puerto de Gijón" loading="lazy"></div>
+                </div>
+                <button class="aside-arrow aside-prev" onclick="moverGaleria(-1)" aria-label="Anterior">&#8249;</button>
+                <button class="aside-arrow aside-next" onclick="moverGaleria(1)" aria-label="Siguiente">&#8250;</button>
+                <div class="aside-dots" id="galeriaDots"></div>
+            </div>
+
+            <!-- TARJETA INFORMACIÓN -->
+            <div class="aside-card">
+                <h3>Información</h3>
+                <ul class="aside-info-lista">
+                    <li><span>Fecha</span><strong>10 Mayo 2026</strong></li>
+                    <li><span>Hora</span><strong>10:00h – 23:00h</strong></li>
+                    <li><span>Lugar</span><strong>Puerto Deportivo de Gijón</strong></li>
+                    <li><span>Municipio</span><strong>Gijón, Asturias</strong></li>
+                    <li><span>Entrada</span><strong>Gratuita</strong></li>
+                    <li><span>Categoría</span><strong>Cultura</strong></li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- ===== VOLVER ===== -->
+    <div class="evento-volver">
+        <a href="../eventos.html" class="btn-volver">&larr; Volver a Eventos</a>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="social-links">
+            <a href="#" aria-label="Instagram"> Instagram</a>
+            <a href="#" aria-label="Facebook"> Facebook</a>
+            <a href="#" aria-label="Twitter/X"> Twitter</a>
+            <a href="#" aria-label="YouTube"> YouTube</a>
+        </div>
+        <p>&copy; 2026 Happiness&amp;Co Asturias. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        let pos = 0;
+        const track = document.getElementById('galeriaTrack');
+        const dotsBox = document.getElementById('galeriaDots');
+        const slides = track.querySelectorAll('.aside-slide');
+        const total = slides.length;
+
+        slides.forEach((_, i) => {
+            const d = document.createElement('button');
+            d.className = 'aside-dot' + (i === 0 ? ' active' : '');
+            d.setAttribute('aria-label', 'Ir a imagen ' + (i + 1));
+            d.onclick = () => irA(i);
+            dotsBox.appendChild(d);
+        });
+
+        function actualizar() {
+            track.style.transform = `translateX(-${pos * 100}%)`;
+            dotsBox.querySelectorAll('.aside-dot').forEach((d, i) =>
+                d.classList.toggle('active', i === pos)
+            );
+        }
+
+        function moverGaleria(dir) {
+            pos = (pos + dir + total) % total;
+            actualizar();
+        }
+
+        function irA(i) { pos = i; actualizar(); }
+
+        setInterval(() => moverGaleria(1), 4000);
+    </script>
+
+</body>
+</html>
