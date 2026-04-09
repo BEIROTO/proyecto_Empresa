@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noche Flamenca en Gijón | Happiness&Co Asturias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="main-header">
+        <img src="../assets/img/logo.png" alt="Happiness & Co logo" class="logo">
+        <nav class="main-nav">
+            <a href="../index.html">Inicio</a>
+            <a href="../eventos.html" class="nav-active">Eventos</a>
+            <a href="../historial.html">Historial de eventos</a>
+            <a href="#">Sobre nosotros</a>
+            <a href="#">Fuentes</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <div class="lang-switch">
+            <select id="languageSelect">
+                <option value="es">ES 🇪🇸</option>
+                <option value="en">EN 🇬🇧</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- ===== HERO DEL EVENTO ===== -->
+    <section class="evento-hero" style="background-image: url('../assets/img/musica3.jpg');">
+        <div class="evento-hero-overlay"></div>
+        <div class="evento-hero-content">
+            <span class="event-tag musica">Música</span>
+            <h1>Noche Flamenca en Gijón</h1>
+            <div class="evento-hero-meta">
+                <span>📅 12 de Mayo de 2026</span>
+                <span>📍 Plaza Mayor, Gijón</span>
+                <span>🕐 20:00h</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <div class="evento-detalle-wrapper">
+
+        <!-- Columna izquierda -->
+        <main class="evento-detalle-main">
+
+            <section class="evento-seccion">
+                <h2>Sobre el evento</h2>
+                <p>La Noche Flamenca en Gijón es una velada única que trae al corazón de la ciudad el arte más puro del flamenco. La Plaza Mayor de Gijón se convierte durante una noche en un tablao al aire libre donde bailaoras, cantaores y guitarristas de primer nivel ofrecen una actuación que fusiona la tradición más profunda del flamenco con la energía de Asturias.</p>
+                <p>El evento, celebrado al caer la noche, crea una atmósfera incomparable donde las piedras históricas de la plaza y las llamas de los candiles enmarcan cada zapateado y cada quejío. Una noche para sentir el duende del flamenco en un escenario que pocas veces se olvida.</p>
+            </section>
+
+            <section class="evento-seccion">
+                <h2>¿Qué encontrarás?</h2>
+                <ul class="evento-lista">
+                    <li>Actuaciones de baile flamenco con bailaoras de reconocimiento nacional</li>
+                    <li>Cante jondo y flamenco en vivo con artistas invitados</li>
+                    <li>Guitarra flamenca en directo durante toda la velada</li>
+                    <li>Espectáculo de fusión flamenco-asturiana como acto de cierre</li>
+                    <li>Zona de tapas y bebidas alrededor de la plaza durante el evento</li>
+                    <li>Taller de iniciación al flamenco previo al espectáculo</li>
+                </ul>
+            </section>
+
+            <section class="evento-seccion">
+                <h2>Programa del día</h2>
+                <div class="evento-programa">
+                    <div class="programa-item">
+                        <span class="programa-hora">18:00h</span>
+                        <span class="programa-desc">Taller de iniciación al flamenco abierto al público</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">19:30h</span>
+                        <span class="programa-desc">Apertura de la zona de tapas y ambientación musical</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">20:00h</span>
+                        <span class="programa-desc">Actuación inaugural: guitarra flamenca en solitario</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">21:00h</span>
+                        <span class="programa-desc">Espectáculo principal: "Duende del Norte" – baile, cante y toque</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">22:30h</span>
+                        <span class="programa-desc">Actuación especial: fusión flamenco-asturiana con gaita y bailaora</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">23:30h</span>
+                        <span class="programa-desc">Cierre de la Noche Flamenca en Gijón</span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Columna derecha -->
+        <aside class="evento-detalle-aside">
+
+            <!-- SLIDER -->
+            <div class="aside-slider">
+                <div class="aside-slider-track" id="galeriaTrack">
+                    <div class="aside-slide"><img src="../assets/img/nocheflamenca/img1.jpg" alt="Bailaora flamenca en la Plaza Mayor de Gijón" loading="lazy"></div>
+                    <div class="aside-slide"><img src="../assets/img/nocheflamenca/img2.jpg" alt="Guitarrista flamenco en actuación nocturna" loading="lazy"></div>
+                    <div class="aside-slide"><img src="../assets/img/nocheflamenca/img3.jpg" alt="Ambiente nocturno del espectáculo flamenco" loading="lazy"></div>
+                </div>
+                <button class="aside-arrow aside-prev" onclick="moverGaleria(-1)" aria-label="Anterior">&#8249;</button>
+                <button class="aside-arrow aside-next" onclick="moverGaleria(1)" aria-label="Siguiente">&#8250;</button>
+                <div class="aside-dots" id="galeriaDots"></div>
+            </div>
+
+            <!-- TARJETA INFORMACIÓN -->
+            <div class="aside-card">
+                <h3>Información</h3>
+                <ul class="aside-info-lista">
+                    <li><span>Fecha</span><strong>12 Mayo 2026</strong></li>
+                    <li><span>Hora</span><strong>18:00h – 23:30h</strong></li>
+                    <li><span>Lugar</span><strong>Plaza Mayor de Gijón</strong></li>
+                    <li><span>Municipio</span><strong>Gijón, Asturias</strong></li>
+                    <li><span>Entrada</span><strong>Gratuita</strong></li>
+                    <li><span>Categoría</span><strong>Música</strong></li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- ===== VOLVER ===== -->
+    <div class="evento-volver">
+        <a href="../eventos.html" class="btn-volver">&larr; Volver a Eventos</a>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="social-links">
+            <a href="#" aria-label="Instagram"> Instagram</a>
+            <a href="#" aria-label="Facebook"> Facebook</a>
+            <a href="#" aria-label="Twitter/X"> Twitter</a>
+            <a href="#" aria-label="YouTube"> YouTube</a>
+        </div>
+        <p>&copy; 2026 Happiness&amp;Co Asturias. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        let pos = 0;
+        const track = document.getElementById('galeriaTrack');
+        const dotsBox = document.getElementById('galeriaDots');
+        const slides = track.querySelectorAll('.aside-slide');
+        const total = slides.length;
+
+        slides.forEach((_, i) => {
+            const d = document.createElement('button');
+            d.className = 'aside-dot' + (i === 0 ? ' active' : '');
+            d.setAttribute('aria-label', 'Ir a imagen ' + (i + 1));
+            d.onclick = () => irA(i);
+            dotsBox.appendChild(d);
+        });
+
+        function actualizar() {
+            track.style.transform = `translateX(-${pos * 100}%)`;
+            dotsBox.querySelectorAll('.aside-dot').forEach((d, i) =>
+                d.classList.toggle('active', i === pos)
+            );
+        }
+
+        function moverGaleria(dir) {
+            pos = (pos + dir + total) % total;
+            actualizar();
+        }
+
+        function irA(i) { pos = i; actualizar(); }
+
+        setInterval(() => moverGaleria(1), 4000);
+    </script>
+
+</body>
+</html>
