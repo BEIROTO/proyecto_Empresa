@@ -10,7 +10,7 @@
 body {
     font-family: 'Roboto', system-ui, sans-serif;
     color: #333;
-    background: #f5f5f5;
+    background: #ffe0ef;
 }
 
 /* ========== HEADER ========== */
@@ -23,7 +23,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 251, 251, 0.95);
     backdrop-filter: blur(6px);
     z-index: 100;
     box-shadow: 0 px 20px rgba(0,0,0,0.08);
@@ -928,7 +928,7 @@ footer p {
         text-align: right;
     }
 /* ===== BADGE FINALIZADO ===== */
-..event-badge-finalizado {
+.event-badge-finalizado {
     display: inline-block;
     background-color: #e05252;
     color: #e8f4fd;
