@@ -26,15 +26,15 @@ body {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(6px);
     z-index: 100;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    box-shadow: 0 px 20px rgba(0,0,0,0.08);
 }
 
 .logo { height: 50px; }
 
 .main-nav {
     display: flex;
-    gap: 30px;
-    font-size: 18px;
+    gap: 28px;
+    font-size: 20px;
 }
 
 .main-nav a {
@@ -51,7 +51,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 20px;
     padding: 8px 12px;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
 }
 
@@ -928,7 +928,7 @@ footer p {
         text-align: right;
     }
 /* ===== BADGE FINALIZADO ===== */
-.event-badge-finalizado {
+..event-badge-finalizado {
     display: inline-block;
     background-color: #e05252;
     color: #e8f4fd;

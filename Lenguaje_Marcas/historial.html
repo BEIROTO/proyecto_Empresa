@@ -7,7 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <script>
+    tailwind.config = {
+        corePlugins: { preflight: false }  
+    }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>    <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
 
@@ -85,7 +90,7 @@
                 <span class="event-badge-vencido">Finalizado</span>
                 <h3>Jornadas del Pote Asturiano</h3>
                 <p>Restaurantes de toda Asturias presentaron sus versiones del pote tradicional en el recinto ferial de Avilés.</p>
-                <a href="#" class="btn-evento btn-evento--vencido">Ver reseñas &rarr;</a>
+                <a href="./eventosfinalizados/poteasturiano.html" class="btn-evento btn-evento--vencido">Ver reseñas &rarr;</a>
             </div>
         </article>
 
