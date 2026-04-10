@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feria del Libro de Oviedo | Happiness&Co Asturias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { corePlugins: { preflight: false } }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="main-header">
+        <img src="../assets/img/logo.png" alt="Happiness & Co logo" class="logo">
+        <nav class="main-nav">
+            <a href="../index.html">Inicio</a>
+            <a href="../eventos.html">Eventos</a>
+            <a href="../historial.html" class="nav-active">Historial de eventos</a>
+            <a href="#">Sobre nosotros</a>
+            <a href="#">Fuentes</a>
+            <a href="#">Contacto</a>
+        </nav>
+        <div class="lang-switch">
+            <select id="languageSelect">
+                <option value="es">ES 🇪🇸</option>
+                <option value="en">EN 🇬🇧</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- ===== HERO DEL EVENTO ===== -->
+    <section class="evento-hero evento-hero--vencido" style="background-image: url('../assets/img/semana.jpg');">
+        <div class="evento-hero-overlay"></div>
+        <div class="evento-hero-content">
+            <div class="evento-hero-badges">
+                <span class="event-tag cultura">Cultura</span>
+                <span class="event-badge-finalizado">Finalizado</span>
+            </div>
+            <h1>Feria del Libro de Oviedo</h1>
+            <div class="evento-hero-meta">
+                <span>📅 1 de Marzo de 2026</span>
+                <span>📍 Oviedo, Asturias</span>
+                <span>🕐 11:00h</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <div class="evento-detalle-wrapper">
+
+        <!-- Columna izquierda -->
+        <main class="evento-detalle-main">
+
+            <section class="evento-seccion">
+                <h2>Sobre el evento</h2>
+                <p>La Feria del Libro de Oviedo reunió en el Parque San Francisco a librerías, autores y lectores en una jornada dedicada a la literatura, la divulgación cultural y el fomento de la lectura. Durante el evento, el público pudo recorrer distintos espacios con firmas, presentaciones y actividades pensadas para acercar los libros a todos los públicos.</p>
+                <p>El encuentro sirvió también para poner en valor la lectura como parte esencial de la vida cultural de la ciudad y reforzar el papel de Oviedo como escenario de encuentros literarios en Asturias. Fue una cita pensada para descubrir novedades editoriales, conversar con autores y disfrutar del ambiente cultural en uno de los espacios más emblemáticos de la ciudad.</p>
+            </section>
+
+            <section class="evento-seccion">
+                <h2>Cómo fue el evento</h2>
+                <ul class="evento-lista">
+                    <li>Participación de autores, editoriales y librerías en distintos espacios del recinto</li>
+                    <li>Firmas y presentaciones abiertas al público durante toda la jornada</li>
+                    <li>Espacio dedicado a la lectura, la divulgación y la actividad literaria</li>
+                    <li>Ambiente familiar con presencia de público local y visitantes</li>
+                    <li>Encuentros con escritores y actividades para fomentar el hábito lector</li>
+                    <li>Programación cultural al aire libre en el entorno del Parque San Francisco</li>
+                </ul>
+            </section>
+
+            <section class="evento-seccion">
+                <h2>Programa que tuvo lugar</h2>
+                <div class="evento-programa">
+                    <div class="programa-item">
+                        <span class="programa-hora">11:00h</span>
+                        <span class="programa-desc">Apertura del evento y bienvenida a los asistentes</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">11:30h</span>
+                        <span class="programa-desc">Inicio de las firmas y encuentros en los distintos espacios literarios</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">13:00h</span>
+                        <span class="programa-desc">Presentación de novedades editoriales y autores invitados</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">16:30h</span>
+                        <span class="programa-desc">Actividades de animación a la lectura para todos los públicos</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">18:00h</span>
+                        <span class="programa-desc">Valoración del público y cierre cultural</span>
+                    </div>
+                    <div class="programa-item">
+                        <span class="programa-hora">19:00h</span>
+                        <span class="programa-desc">Despedida y clausura de la jornada</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="evento-seccion">
+                <h2>Reseñas del público</h2>
+                <div class="evento-resenas">
+
+                    <div class="resena-item">
+                        <div class="resena-header">
+                            <div class="resena-avatar">A</div>
+                            <div class="resena-meta">
+                                <span class="resena-nombre">Andrea G.</span>
+                                <span class="resena-lugar">Oviedo, Asturias</span>
+                            </div>
+                            <div class="resena-estrellas">★★★★★</div>
+                        </div>
+                        <p>"Me encantó el ambiente de la feria y poder acercarme a varios autores en un mismo sitio. Fue una jornada muy agradable y muy bien organizada."</p>
+                        <div class="resena-fecha">1 de marzo de 2026</div>
+                    </div>
+
+                    <div class="resena-item">
+                        <div class="resena-header">
+                            <div class="resena-avatar" style="background: linear-gradient(135deg, #34d399, #059669);">P</div>
+                            <div class="resena-meta">
+                                <span class="resena-nombre">Pablo R.</span>
+                                <span class="resena-lugar">Gijón, Asturias</span>
+                            </div>
+                            <div class="resena-estrellas">★★★★★</div>
+                        </div>
+                        <p>"Muy buena organización y con muchas actividades interesantes. Además de comprar libros, pudimos escuchar presentaciones y descubrir nuevos autores."</p>
+                        <div class="resena-fecha">2 de marzo de 2026</div>
+                    </div>
+
+                    <div class="resena-item">
+                        <div class="resena-header">
+                            <div class="resena-avatar" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">M</div>
+                            <div class="resena-meta">
+                                <span class="resena-nombre">Marta L.</span>
+                                <span class="resena-lugar">Avilés, Asturias</span>
+                            </div>
+                            <div class="resena-estrellas">★★★★☆</div>
+                        </div>
+                        <p>"Una jornada muy completa y muy cultural. Fui con mi familia y salimos encantados. Se notaba el cuidado puesto en cada actividad."</p>
+                        <div class="resena-fecha">3 de marzo de 2026</div>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Columna derecha -->
+        <aside class="evento-detalle-aside">
+
+            <!-- SLIDER -->
+            <div class="aside-slider">
+                <div class="aside-slider-track" id="galeriaTrack">
+                    <div class="aside-slide"><img src="../assets/img/feriadellibrooviedo/img1.jpg" alt="Feria del Libro de Oviedo" loading="lazy"></div>
+                    <div class="aside-slide"><img src="../assets/img/feriadellibrooviedo/img2.jpg" alt="Encuentro literario en Oviedo" loading="lazy"></div>
+                    <div class="aside-slide"><img src="../assets/img/feriadellibrooviedo/img3.jpg" alt="Evento cultural en el Parque San Francisco" loading="lazy"></div>
+                </div>
+                <button class="aside-arrow aside-prev" onclick="moverGaleria(-1)" aria-label="Anterior">&#8249;</button>
+                <button class="aside-arrow aside-next" onclick="moverGaleria(1)" aria-label="Siguiente">&#8250;</button>
+                <div class="aside-dots" id="galeriaDots"></div>
+            </div>
+
+            <!-- TARJETA INFORMACIÓN -->
+            <div class="aside-card">
+                <h3>Información</h3>
+                <ul class="aside-info-lista">
+                    <li><span>Fecha</span><strong>1 Marzo 2026</strong></li>
+                    <li><span>Hora</span><strong>11:00h – 19:00h</strong></li>
+                    <li><span>Lugar</span><strong>Parque San Francisco</strong></li>
+                    <li><span>Municipio</span><strong>Oviedo, Asturias</strong></li>
+                    <li><span>Entrada</span><strong>Gratuita</strong></li>
+                    <li><span>Categoría</span><strong>Cultura</strong></li>
+                    <li><span>Estado</span><strong style="color: #e05252;">Finalizado</strong></li>
+                </ul>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <!-- ===== VOLVER ===== -->
+    <div class="evento-volver">
+        <a href="../historial.html" class="btn-volver">&larr; Volver al Historial</a>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="social-links">
+            <a href="#" aria-label="Instagram"> Instagram</a>
+            <a href="#" aria-label="Facebook"> Facebook</a>
+            <a href="#" aria-label="Twitter/X"> Twitter</a>
+            <a href="#" aria-label="YouTube"> YouTube</a>
+        </div>
+        <p>&copy; 2026 Happiness&amp;Co Asturias. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        let pos = 0;
+        const track = document.getElementById('galeriaTrack');
+        const dotsBox = document.getElementById('galeriaDots');
+        const slides = track.querySelectorAll('.aside-slide');
+        const total = slides.length;
+
+        slides.forEach((_, i) => {
+            const d = document.createElement('button');
+            d.className = 'aside-dot' + (i === 0 ? ' active' : '');
+            d.setAttribute('aria-label', 'Ir a imagen ' + (i + 1));
+            d.onclick = () => irA(i);
+            dotsBox.appendChild(d);
+        });
+
+        function actualizar() {
+            track.style.transform = `translateX(-${pos * 100}%)`;
+            dotsBox.querySelectorAll('.aside-dot').forEach((d, i) =>
+                d.classList.toggle('active', i === pos)
+            );
+        }
+
+        function moverGaleria(dir) {
+            pos = (pos + dir + total) % total;
+            actualizar();
+        }
+
+        function irA(i) {
+            pos = i;
+            actualizar();
+        }
+
+        setInterval(() => moverGaleria(1), 4000);
+    </script>
+
+</body>
+</html>
