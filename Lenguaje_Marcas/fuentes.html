@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fuentes | Happiness&Co Asturias</title>
+
+  <script>
+    tailwind.config = { corePlugins: { preflight: false } }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+
+<body class="bg-stone-50 text-stone-800 antialiased">
+    <!-- ===== HEADER ===== -->
+    <header class="main-header">
+        <img src="./assets/img/logo.png" alt="Happiness & Co logo" class="logo">
+        <nav class="main-nav">
+            <a data-i18n="nav_inicio" href="index.html">Inicio</a>
+            <a data-i18n="nav_eventos" href="eventos.html">Eventos</a>
+            <a data-i18n="nav_historial" href="historial.html">Historial de eventos</a>
+            <a data-i18n="nav_nosotros" href="sobrenosotros.html"> Sobre nosotros</a>
+            <a data-i18n="nav_contacto" href="contacto.html">Contacto</a>
+            <a data-i18n="nav_fuentes" href="../fuentes.html">Fuentes</a>
+        </nav>
+        <div class="lang-switch">
+            <select id="languageSelect">
+                <option value="es">ES 🇪🇸</option>
+                <option value="en">EN 🇬🇧</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- ===== BANNER ===== -->
+    <section class="events-banner">
+        <div class="events-banner-overlay"></div>
+        <div class="events-banner-content">
+            <h1>Fuentes</h1>
+            <p>Transparencia sobre la información y contenido que publicamos</p>
+        </div>
+    </section>
+
+    <!-- ===== CONTENIDO PRINCIPAL ===== -->
+    <main class="bg-white pt-[30px]">
+        <section class="mx-auto max-w-7xl px-3 py-4 md:px-1 lg:px-12">
+            
+            <!-- FUENTES OFICIALES -->
+            <div class="mb-16">
+                <div class="inline-flex rounded-full bg-gradient-to-r from-[#ff0e7a] to-[#ff7a00] px-4 py-2 text-sm font-semibold text-white">
+                    Fuentes oficiales
+                </div>
+                <h2 class="mt-6 text-3xl font-bold tracking-tight text-stone-900">Instituciones y organismos oficiales</h2>
+                <p class="mt-4 max-w-3xl text-lg text-stone-600">
+                    La información sobre eventos públicos, fechas y ubicaciones se obtiene de los sitios web oficiales de ayuntamientos, 
+                    instituciones culturales y organismos de promoción turística de Asturias.
+                </p>
+
+                <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    <div class="group rounded-[28px] border border-rose-100 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-300">
+                        <div class="mb-4 flex items-center gap-3">
+                            <div class="h-12 w-12 rounded-2xl bg-gradient-to-r from-[#ff0e7a] to-[#ff7a00] flex items-center justify-center">
+                                <svg class="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-stone-900 text-lg">Gobierno del Principado</h3>
+                                <p class="text-sm text-stone-500">www.asturias.es</p>
+                            </div>
+                        </div>
+                        <p class="text-stone-600 leading-relaxed">Agenda cultural oficial del Principado de Asturias</p>
+                    </div>
+
+                    <div class="group rounded-[28px] border border-rose-100 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-300">
+                        <div class="mb-4 flex items-center gap-3">
+                            <div class="h-12 w-12 rounded-2xl bg-gradient-to-r from-[#ff0e7a] to-[#ff7a00] flex items-center justify-center">
+                                🏛️
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-stone-900 text-lg">Ayuntamiento de Oviedo</h3>
+                                <p class="text-sm text-stone-500">www.oviedo.es</p>
+                            </div>
+                        </div>
+                        <p class="text-stone-600 leading-relaxed">Calendario municipal de eventos culturales</p>
+                    </div>
+
+                    <div class="group rounded-[28px] border border-rose-100 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-300">
+                        <div class="mb-4 flex items-center gap-3">
+                            <div class="h-12 w-12 rounded-2xl bg-gradient-to-r from-[#ff0e7a] to-[#ff7a00] flex items-center justify-center">
+                                🏛️
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-stone-900 text-lg">Ayuntamiento de Gijón</h3>
+                                <p class="text-sm text-stone-500">www.gijon.es</p>
+                            </div>
+                        </div>
+                        <p class="text-stone-600 leading-relaxed">Programación cultural y festivales locales</p>
+                    </div>
+
+                    <div class="group rounded-[28px] border border-rose-100 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-300">
+                        <div class="mb-4 flex items-center gap-3">
+                            <div class="h-12 w-12 rounded-2xl bg-gradient-to-r from-[#ff0e7a] to-[#ff7a00] flex items-center justify-center">
+                                🏛️
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-stone-900 text-lg">Agenda de España</h3>
+                                <p class="text-sm text-stone-500">www.spain.info</p>
+                            </div>
+                        </div>
+                        <p class="text-stone-600 leading-relaxed">Eventos en España</p>
+                    </div>
+
+                    <div class="group rounded-[28px] border border-rose-100 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-300">
+                        <div class="mb-4 flex items-center gap-3">
+                            <div class="h-12 w-12 rounded-2xl bg-gradient-to-r from-[#ff0e7a] to-[#ff7a00] flex items-center justify-center">
+                                🎨
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-stone-900 text-lg">Museo de Bellas Artes</h3>
+                                <p class="text-sm text-stone-500">www.museobbaa.com</p>
+                            </div>
+                        </div>
+                        <p class="text-stone-600 leading-relaxed">Exposiciones y actividades culturales</p>
+                    </div>
+
+                    <div class="group rounded-[28px] border border-rose-100 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-300">
+                        <div class="mb-4 flex items-center gap-3">
+                            <div class="h-12 w-12 rounded-2xl bg-gradient-to-r from-[#ff0e7a] to-[#ff7a00] flex items-center justify-center">
+                                🍽️
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-stone-900 text-lg">Turismo Asturias</h3>
+                                <p class="text-sm text-stone-500">www.turismoasturias.es</p>
+                            </div>
+                        </div>
+                        <p class="text-stone-600 leading-relaxed">Gastronomía y eventos gastronómicos</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MEDIOS Y PRENSA -->
+            <div class="mb-16">
+                <div class="inline-flex rounded-full bg-gradient-to-r from-[#ff7a00] to-[#ff0e7a] px-4 py-2 text-sm font-semibold text-white">
+                    Medios de comunicación
+                </div>
+                <h2 class="mt-6 text-3xl font-bold tracking-tight text-stone-900">Prensa local y regional</h2>
+                <p class="mt-4 max-w-3xl text-lg text-stone-600">
+                    Las reseñas, opiniones de usuarios y puntuaciones promedio se obtienen de publicaciones locales y plataformas de reseñas de eventos.
+                </p>
+
+                <div class="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
+                    <div class="group rounded-[28px] border border-orange-100 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-300">
+                        <div class="mb-4 flex items-center gap-3">
+                            <div class="h-12 w-12 rounded-2xl bg-gradient-to-r from-[#ff7a00] to-[#ff0e7a] flex items-center justify-center">
+                                📰
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-stone-900 text-lg">La Nueva España</h3>
+                                <p class="text-sm text-stone-500">lanuevaespana.es</p>
+                            </div>
+                        </div>
+                        <p class="text-stone-600 leading-relaxed">Crónicas de eventos culturales y reseñas</p>
+                    </div>
+
+                    <div class="group rounded-[28px] border border-orange-100 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-all duration-300">
+                        <div class="mb-4 flex items-center gap-3">
+                            <div class="h-12 w-12 rounded-2xl bg-gradient-to-r from-[#ff7a00] to-[#ff0e7a] flex items-center justify-center">
+                                📰
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-stone-900 text-lg">El Comercio</h3>
+                                <p class="text-sm text-stone-500">elcomercio.es</p>
+                            </div>
+                        </div>
+                        <p class="text-stone-600 leading-relaxed">Agenda cultural y gastronómica</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IMÁGENES Y FOTOGRAFÍA -->
+            <div class="mb-16">
+                <div class="inline-flex rounded-full bg-gradient-to-r from-[#6c63ff] to-[#ff0e7a] px-4 py-2 text-sm font-semibold text-white">
+                    Imágenes
+                </div>
+                <h2 class="mt-6 text-3xl font-bold tracking-tight text-stone-900">Fotografía y derechos de imagen</h2>
+                <p class="mt-4 max-w-3xl text-lg text-stone-600">
+                    Las imágenes se obtienen de bancos de imágenes libres de derechos, publicaciones oficiales de los eventos y colaboraciones con fotógrafos locales.
+                </p>
+
+                <div class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+                    <div class="rounded-[28px] border border-purple-100 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
+                        <div class="mb-4 flex items-center gap-3">
+                            <div class="h-12 w-12 rounded-2xl bg-gradient-to-r from-[#6c63ff] to-[#ff0e7a] flex items-center justify-center">
+                                📸
+                            </div>
+                            <h3 class="font-bold text-stone-900 text-lg">Bancos de imágenes libres</h3>
+                        </div>
+                        <ul class="ml-6 list-disc space-y-1 text-stone-600 text-sm">
+                            <li>Unsplash (fotografía libre)</li>
+                            <li>Pexels (imágenes gratuitas)</li>
+                            <li>Pixabay (contenido libre)</li>
+                        </ul>
+                    </div>
+
+                    <div class="rounded-[28px] border border-purple-100 bg-white p-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
+                        <div class="mb-4 flex items-center gap-3">
+                            <div class="h-12 w-12 rounded-2xl bg-gradient-to-r from-[#6c63ff] to-[#ff0e7a] flex items-center justify-center">
+                                📷
+                            </div>
+                            <h3 class="font-bold text-stone-900 text-lg">Fotógrafos colaboradores</h3>
+                        </div>
+                        <p class="text-stone-600 leading-relaxed">
+                            Imágenes de eventos con autorización expresa de fotógrafos locales y organizadores.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VERIFICACIÓN -->
+            <div class="rounded-[32px] border border-green-100 bg-gradient-to-r from-[#f0fdf4] to-[#f7fee7] p-10 text-center">
+                <div class="mx-auto mb-6 inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-green-100">
+                    <svg class="h-8 w-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <h2 class="mb-4 text-2xl font-bold text-stone-900">Verificación de datos</h2>
+                <p class="mx-auto max-w-2xl text-stone-700 leading-relaxed">
+                    Toda la información publicada se verifica con las fuentes originales antes de publicarse. 
+                    Las fechas y ubicaciones se actualizan en tiempo real según la información oficial disponible.
+                </p>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="social-links">
+            <a href="#" aria-label="Instagram">📸 Instagram</a>
+            <a href="#" aria-label="Facebook">📘 Facebook</a>
+            <a href="#" aria-label="Twitter/X">🐦 Twitter</a>
+            <a href="#" aria-label="YouTube">▶️ YouTube</a>
+        </div>
+        <p>&copy; 2026 Happiness&amp;Co Asturias. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

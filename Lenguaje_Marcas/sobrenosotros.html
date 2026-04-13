@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre nosotros | Happiness&Co Asturias</title>
+
+  <script>
+    tailwind.config = { corePlugins: { preflight: false } }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+</head>
+
+<body class="bg-white text-stone-800 antialiased">
+
+    <!-- ===== HEADER ===== -->
+    <header class="main-header">
+        <img src="./assets/img/logo.png" alt="Happiness & Co logo" class="logo">
+        <nav class="main-nav">
+            <a data-i18n="nav_inicio" href="index.html">Inicio</a>
+            <a data-i18n="nav_eventos" href="eventos.html">Eventos</a>
+            <a data-i18n="nav_historial" href="historial.html">Historial de eventos</a>
+            <a data-i18n="nav_nosotros" href="sobrenosotros.html"> Sobre nosotros</a>
+            <a data-i18n="nav_contacto" href="contacto.html">Contacto</a>
+            <a data-i18n="nav_fuentes" href="fuentes.html">Fuentes</a>
+        </nav>
+        <div class="lang-switch">
+            <select id="languageSelect">
+                <option value="es">ES 🇪🇸</option>
+                <option value="en">EN 🇬🇧</option>
+            </select>
+        </div>
+    </header>
+    <!-- ===== BANNER EVENTOS ===== -->
+    <section class="events-banner">
+        <div class="events-banner-overlay"></div>
+        <div class="events-banner-content">
+            <h1>Sobre nosotros</h1>
+            <p>Descubre la esencia de Happiness&amp;Co Asturias y nuestra forma de vivir la cultura, el ocio y las experiencias</p>
+        </div>
+    </section>
+
+
+  <section class="mx-auto max-w-7xl px-6 py-10 md:px-10 lg:px-12 lg:py-14">
+
+      <!-- QUIÉNES SOMOS -->
+      <div class="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-2">
+        <div class="rounded-[32px] border border-rose-100 bg-white p-8 shadow-[0_16px_40px_rgba(0,0,0,0.05)]">
+          <span class="inline-flex rounded-full bg-[#fff1f7] px-3 py-1 text-sm font-semibold text-[#ff0e7a]">
+            Quiénes somos
+          </span>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-stone-900">
+            Un proyecto pensado para inspirar y conectar
+          </h2>
+          <p class="mt-4 text-stone-600 leading-7">
+            Happiness&amp;Co Asturias nace con la idea de reunir en un solo lugar planes, eventos y experiencias
+            que merecen ser descubiertos. Nos interesa lo cultural, lo gastronómico, lo creativo y todo aquello
+            que ayude a vivir Asturias de una forma más cercana, más humana y más auténtica.
+          </p>
+          <p class="mt-4 text-stone-600 leading-7">
+            No somos solo una agenda: queremos ser una ventana a propuestas con personalidad, a iniciativas locales
+            y a lugares que generan recuerdos.
+          </p>
+        </div>
+
+        <div class="overflow-hidden rounded-[32px] border border-orange-100 bg-white shadow-[0_16px_40px_rgba(0,0,0,0.05)]">
+          <img
+            src="./assets/img/romeriaenlamontana/1mg3.jpg"
+            alt="Paisaje o experiencia representativa de Asturias"
+            class="h-full w-full object-cover"
+          />
+        </div>
+      </div>
+
+      <!-- VALORES -->
+      <div class="mt-10">
+        <div class="mb-6 max-w-2xl">
+          <span class="inline-flex rounded-full bg-[#fff5ec] px-3 py-1 text-sm font-semibold text-[#ff7a00]">
+            Nuestra esencia
+          </span>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-stone-900">
+            Lo que nos mueve
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div class="rounded-[28px] border border-rose-100 bg-[#fff7fa] p-7">
+            <h3 class="text-xl font-bold text-stone-900">Cercanía</h3>
+            <p class="mt-3 text-stone-600 leading-7">
+              Apostamos por una forma de comunicar próxima, clara y honesta, poniendo siempre a las personas en el centro.
+            </p>
+          </div>
+
+          <div class="rounded-[28px] border border-orange-100 bg-[#fff8f1] p-7">
+            <h3 class="text-xl font-bold text-stone-900">Autenticidad</h3>
+            <p class="mt-3 text-stone-600 leading-7">
+              Buscamos propuestas con identidad propia, experiencias reales y lugares que transmiten la esencia de Asturias.
+            </p>
+          </div>
+
+          <div class="rounded-[28px] border border-rose-100 bg-[#fff7fa] p-7">
+            <h3 class="text-xl font-bold text-stone-900">Inspiración</h3>
+            <p class="mt-3 text-stone-600 leading-7">
+              Queremos despertar ganas de salir, descubrir, compartir y disfrutar del territorio desde una mirada más viva.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GALERÍA -->
+      <div class="mt-10">
+        <div class="mb-6 max-w-2xl">
+          <span class="inline-flex rounded-full bg-[#fff1f7] px-3 py-1 text-sm font-semibold text-[#ff0e7a]">
+            Asturias en imágenes
+          </span>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight text-stone-900">
+            Un proyecto conectado con el territorio
+          </h2>
+          <p class="mt-3 text-stone-600 leading-7">
+            Cultura, paisaje, gastronomía y experiencias forman parte de una región con gran riqueza visual y una agenda de ocio y eventos muy variada.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div class="overflow-hidden rounded-[28px] border border-stone-200 bg-white shadow-sm">
+            <img src="./assets/img/tetrogijon/img2.jpg" alt="Paisaje de Asturias" class="h-72 w-full object-cover" />
+          </div>
+
+          <div class="overflow-hidden rounded-[28px] border border-stone-200 bg-white shadow-sm">
+            <img src="./assets/img/arteasturiano/img3.jpg" alt="Evento o ambiente cultural en Asturias" class="h-72 w-full object-cover" />
+          </div>
+
+          <div class="overflow-hidden rounded-[28px] border border-stone-200 bg-white shadow-sm">
+            <img src="./assets/img/Romería de San Marcos _ Happiness&Co Asturias_files/img5.jpg" alt="Experiencia gastronómica o de ocio en Asturias" class="h-72 w-full object-cover" />
+          </div>
+        </div>
+      </div>
+
+      <!-- MISIÓN -->
+<div class="mt-10 flex flex-col gap-8 lg:flex-row">
+  
+  <!-- IMAGEN -->
+  <div
+    class="min-h-[320px] overflow-hidden rounded-[32px] border border-rose-100 bg-white bg-cover bg-center shadow-[0_16px_40px_rgba(0,0,0,0.05)] lg:w-1/2"
+    style="background-image: url('./assets/img/festivaldanzatradicional/img1.jpg');"
+  ></div>
+
+  <!-- TEXTO -->
+  <div class="rounded-[32px] border border-orange-100 bg-white p-8 shadow-[0_16px_40px_rgba(0,0,0,0.05)] lg:w-1/2">
+    <span class="inline-flex rounded-full bg-[#fff5ec] px-3 py-1 text-sm font-semibold text-[#ff7a00]">
+      Nuestra misión
+    </span>
+    <h2 class="mt-4 text-3xl font-bold tracking-tight text-stone-900">
+      Dar visibilidad a lo que merece ser vivido
+    </h2>
+    <p class="mt-4 text-stone-600 leading-7">
+      Queremos ayudarte a descubrir actividades, espacios y propuestas que quizás no aparecen siempre en los circuitos más visibles,
+      pero que aportan valor, identidad y emoción.
+    </p>
+    <p class="mt-4 text-stone-600 leading-7">
+      Happiness&amp;Co Asturias es una invitación a mirar alrededor con más atención y a disfrutar de una tierra
+      donde siempre hay algo interesante que hacer, probar o conocer.
+    </p>
+  </div>
+
+</div>
+
+
+
+
+      <!-- CTA FINAL -->
+      <div class="mt-10 rounded-[34px] border border-rose-100 bg-gradient-to-r from-[#fff1f7] to-[#fff5ec] p-8 md:p-10">
+        <div class="max-w-3xl">
+          <h2 class="text-3xl font-bold tracking-tight text-stone-900">
+            Seguimos explorando Asturias para compartirla contigo
+          </h2>
+          <p class="mt-4 text-stone-600 leading-7">
+            Si quieres proponernos un evento, una experiencia o una colaboración, estaremos encantados de escucharte.
+          </p>
+          <a
+            href="contacto.html"
+            class="mt-6 inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-[#ff0e7a] to-[#ff7a00] px-7 py-3 font-semibold text-white shadow-[0_14px_30px_rgba(255,14,122,0.22)] transition hover:scale-[1.02]"
+          >
+            Contacta con nosotros
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="#" aria-label="Instagram">📸 Instagram</a>
+      <a href="#" aria-label="Facebook">📘 Facebook</a>
+      <a href="#" aria-label="Twitter/X">🐦 Twitter</a>
+      <a href="#" aria-label="YouTube">▶️ YouTube</a>
+    </div>
+    <p>&copy; 2026 Happiness&amp;Co Asturias. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
