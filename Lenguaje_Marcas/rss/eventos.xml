@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eventos | Happiness&amp;Co Asturias</title>
+    <link>https://www.happinesscoasturias.com/eventos.html</link>
+    <description>Eventos culturales, musicales y gastronómicos en Asturias</description>
+    <language>es</language>
+    <pubDate>Tue, 14 Apr 2026 12:00:00 +0200</pubDate>
+    <atom:link href="https://www.happinesscoasturias.com/rss/eventos.xml" rel="self" type="application/rss+xml" />
+
+    <!-- Romería de San Marcos -->
+    <item>
+      <title>Romería de San Marcos</title>
+      <link>https://www.happinesscoasturias.com/eventos/romeriadesanmarcos.html</link>
+      <description>Celebración tradicional con música folk y gastronomía asturiana en el valle.</description>
+      <category>Cultura</category>
+      <pubDate>Sun, 20 Apr 2026 10:00:00 +0200</pubDate>
+    </item>
+
+    <!-- Festival de Danza Tradicional -->
+    <item>
+      <title>Festival de Danza Tradicional</title>
+      <link>https://www.happinesscoasturias.com/eventos/festivaldedanzatradicional.html</link>
+      <description>Grupos de danza folk asturiana se reúnen para celebrar las tradiciones del Principado.</description>
+      <category>Música</category>
+      <pubDate>Sun, 20 Apr 2026 20:00:00 +0200</pubDate>
+    </item>
+
+    <!-- Festival de las Llamas, Oviedo -->
+    <item>
+      <title>Festival de las Llamas, Oviedo</title>
+      <link>https://www.happinesscoasturias.com/eventos/festivaldellamas.html</link>
+      <description>Espectáculo de música y fuego con artistas nacionales e internacionales al aire libre.</description>
+      <category>Música</category>
+      <pubDate>Sat, 05 May 2026 21:00:00 +0200</pubDate>
+    </item>
+
+    <!-- Jazz en la Plaza de Avilés -->
+    <item>
+      <title>Jazz en la Plaza de Avilés</title>
+      <link>https://www.happinesscoasturias.com/eventos/jazzplazaaviles.html</link>
+      <description>Festival de jazz al atardecer en el casco histórico de Avilés con músicos internacionales.</description>
+      <category>Música</category>
+      <pubDate>Sat, 28 May 2026 19:00:00 +0200</pubDate>
+    </item>
+
+    <!-- Romería de los Picos de Europa -->
+    <item>
+      <title>Romería de los Picos de Europa</title>
+      <link>https://www.happinesscoasturias.com/eventos/romeriaenlamontana.html</link>
+      <description>Danzas y música tradicional asturiana con los Picos de Europa como espectacular telón de fondo.</description>
+      <category>Música</category>
+      <pubDate>Sun, 08 Jun 2026 11:00:00 +0200</pubDate>
+    </item>
+
+    <!-- Feria del Cachopo -->
+    <item>
+      <title>Feria del Cachopo</title>
+      <link>https://www.happinesscoasturias.com/eventos/feriadelcachopo.html</link>
+      <description>Concurso y degustación del cachopo más famoso de Asturias en el centro de Oviedo.</description>
+      <category>Gastronomía</category>
+      <pubDate>Sat, 18 May 2026 10:00:00 +0200</pubDate>
+    </item>
+
+    <!-- Mercado Gastronómico de Oviedo -->
+    <item>
+      <title>Mercado Gastronómico de Oviedo</title>
+      <link>https://www.happinesscoasturias.com/eventos/mercadogastronomicodeoviedo.html</link>
+      <description>Productos locales, sidra y gastronomía tradicional asturiana en la plaza del casco antiguo.</description>
+      <category>Gastronomía</category>
+      <pubDate>Sat, 25 May 2026 11:00:00 +0200</pubDate>
+    </item>
+
+    <!-- Festival de la Fabada Asturiana -->
+    <item>
+      <title>Festival de la Fabada Asturiana</title>
+      <link>https://www.happinesscoasturias.com/eventos/festivaldelafabada.html</link>
+      <description>Concurso entre restaurantes para elegir la mejor fabada tradicional de Asturias.</description>
+      <category>Gastronomía</category>
+      <pubDate>Mon, 01 Jun 2026 12:00:00 +0200</pubDate>
+    </item>
+
+    <!-- Feria del Queso Cabrales -->
+    <item>
+      <title>Feria del Queso Cabrales</title>
+      <link>https://www.happinesscoasturias.com/eventos/festivaldelquesocabrales.html</link>
+      <description>Degustación y concurso del famoso queso asturiano en Arenas de Cabrales.</description>
+      <category>Gastronomía</category>
+      <pubDate>Sat, 18 May 2026 11:00:00 +0200</pubDate>
+    </item>
+
+    <!-- Semana Negra de Gijón -->
+    <item>
+      <title>Semana Negra de Gijón</title>
+      <link>https://www.happinesscoasturias.com/eventos/semananegra.html</link>
+      <description>Festival literario y cultural con autores nacionales e internacionales.</description>
+      <category>Cultura</category>
+      <pubDate>Fri, 10 May 2026 19:00:00 +0200</pubDate>
+    </item>
+
+    <!-- Noche Flamenca en Gijón -->
+    <item>
+      <title>Noche Flamenca en Gijón</title>
+      <link>https://www.happinesscoasturias.com/eventos/nocheflamenca.html</link>
+      <description>Actuaciones de flamenco en vivo en la plaza mayor de Gijón con bailaoras de primer nivel.</description>
+      <category>Música</category>
+      <pubDate>Fri, 12 May 2026 21:00:00 +0200</pubDate>
+    </item>
+
+    <!-- Mercado Medieval de Avilés -->
+    <item>
+      <title>Mercado Medieval de Avilés</title>
+      <link>https://www.happinesscoasturias.com/eventos/mercadomedieval.html</link>
+      <description>Recreación histórica con artesanía, gastronomía y espectáculos medievales.</description>
+      <category>Cultura</category>
+      <pubDate>Sat, 22 May 2026 10:00:00 +0200</pubDate>
+    </item>
+
+  </channel>
+</rss>
