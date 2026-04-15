@@ -1,2 +1,0 @@
-Creacion de estruccturas de carpetas y enlazado a github.
-Documentación y repaso de la parte de programación.
