@@ -39,125 +39,175 @@
             </select>
         </div>
     </header>
+<!-- ===== HERO ===== -->
+<section class="relative h-screen overflow-hidden">
+    <img src="./assets/img/img3.png" alt="Costa de Asturias" class="w-full h-full object-cover block">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20"></div>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero">
-        <img src="./assets/img/img3.png" alt="Costa de Asturias" class="hero-bg">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-event-info">
-                <span class="hero-date">12 Abril 2026</span>
-                <h2 class="hero-title">Festival de las Llamas, Oviedo</h2>
+    <div class="absolute inset-0 z-20 flex items-end justify-between px-[60px] pb-[50px]">
+        
+        <!-- Texto izquierda -->
+        <div class="flex flex-col gap-3 text-white">
+            <span class="bg-[#ff7a00] text-white text-[0.85rem] font-bold px-[14px] py-[5px] rounded-full inline-block uppercase tracking-[1px] w-fit">
+                12 Abril 2026
+            </span>
+            <h2 class="text-[3.2rem] font-extrabold leading-[1.1] max-w-[560px]">
+                Festival de las Llamas, Oviedo
+            </h2>
+        </div>
+
+        <!-- Galería derecha -->
+        <div class="hero-right flex flex-col items-end gap-[14px] z-30">
+            <div id="hero-viewport" class="w-[380px] h-[600px] overflow-hidden rounded-[12px]">
+                <div id="hero-slider" class="flex h-full transition-transform duration-500 ease-in-out will-change-transform">
+                    
+                    <article class="hero-card relative w-[380px] h-[600px] flex-none overflow-hidden">
+                        <img src="./assets/img/img4.png" alt="Basílica en montañas Asturias" class="w-full h-full object-cover block">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent flex items-end p-4">
+                            <a href="./eventos/romeriadesanmarcos.html" class="block text-white text-[2.35rem] font-bold leading-[1.22] max-w-[88%]">
+                                Romería de San Marcos →
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="hero-card relative w-[380px] h-[600px] flex-none overflow-hidden">
+                        <img src="./assets/img/jazzenaviles/img3.jpg" alt="Músicos en calle Asturias" class="w-full h-full object-cover block">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent flex items-end p-4">
+                            <a href="./eventos/jazzplazaaviles.html" class="block text-white text-[2.35rem] font-bold leading-[1.22] max-w-[88%]">
+                                Concierto en la Playa de Salinas →
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="hero-card relative w-[380px] h-[600px] flex-none overflow-hidden">
+                        <img src="./assets/img/festivaldanzadelfuego/img1.jpg" alt="Mujer del fuego" class="w-full h-full object-cover block">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent flex items-end p-4">
+                            <a href="./eventos/festivaldellamas.html" class="block text-white text-[2.35rem] font-bold leading-[1.22] max-w-[88%]">
+                                Festival de las llamas →
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
             </div>
-            <div class="hero-right">
-                <div class="hero-slider">
-                    <article class="hero-card">
-                        <img src="./assets/img/Romería de San Marcos _ Happiness&Co Asturias_files/img4.png" alt="Basílica en montañas Asturias">
-                        <div class="hero-card-overlay">
-                            <a href="./eventos/romeriadesanmarcos.html"><span>Romería de San Marcos</span> &rarr;</a></div>
-                    </article>
-                    <article class="hero-card">
-                        <img src="./assets/img/jazzenaviles/img3.jpg" alt="Músicos en calle Asturias">
-                        <div class="hero-card-overlay"><a href="./eventos/jazzplazaaviles.html"><span>Concierto en la Playa de Salinas</span>&rarr;</a></div>
-                    </article>
-                    <article class="hero-card">
-                        <img src="./assets/img/festivaldanzadelfuego/img1.jpg" alt="Mujer del fuego">
-                        <div class="hero-card-overlay"><a href="./eventos/festivaldellamas.html"><span>Festival de las llamas</span>&rarr;</a></div>
-                    </article>
-                </div>
-                <div class="hero-arrows">
-                    <button class="arrow prev">&lt;</button>
-                    <button class="arrow next">&gt;</button>
-                </div>
+
+            <div class="hero-arrows flex gap-[10px]">
+                <button class="prev w-8 h-8 rounded-full bg-[#ff7a00] text-white font-bold text-[0.9rem] hover:bg-[#ff0e7a] hover:scale-110 transition">
+                    &lt;
+                </button>
+                <button class="next w-8 h-8 rounded-full bg-[#ff7a00] text-white font-bold text-[0.9rem] hover:bg-[#ff0e7a] hover:scale-110 transition">
+                    &gt;
+                </button>
             </div>
         </div>
-    </section>
-
-    <!-- ===== CUERPO PRINCIPAL ===== -->
-    <div class="page-body">
-
-        <!-- MAIN: Próximos eventos + Mapa -->
-        <main class="upcoming-events">
-            <h2 class="section-title" data-i18n="proximos_eventos">Próximos Eventos</h2>
-
-            <div class="events-list">
-                <article class="event-card">
-                    <img src="./assets/img/musica4.jpg" alt="Baile tradicional asturiano">
-                    <div class="event-card-body">
-                        <span class="event-date">20 Abril 2026</span>
-                        <h3>Festival de Danza Tradicional</h3>
-                        <p>Grupos de danza folk asturiana se reúnen para celebrar las tradiciones del Principado.</p>
-                        <a href="./eventos/festivaldedanzatradicional.html">Ver evento &rarr;</a>
-                    </div>
-                </article>
-                <article class="event-card">
-                    <img src="./assets/img/musica1.jpg" alt="Danza asturiana en montaña">
-                    <div class="event-card-body">
-                        <span class="event-date">5 Mayo 2026</span>
-                        <h3>Romería de los Picos de Europa</h3>
-                        <p>Danzas y música tradicional asturiana con los Picos de Europa como espectacular telón de fondo.</p>
-                        <a href="./eventos/romeriaenlamontana.html">Ver evento &rarr;</a>
-                    </div>
-                </article>
-                <article class="event-card">
-                    <img src="./assets/img/gastronomia4.jpg" alt="Cachopo asturiano">
-                    <div class="event-card-body">
-                        <span class="event-date">18 Mayo 2026</span>
-                        <h3>Feria del Cachopo</h3>
-                        <p>Concurso y degustación del cachopo más famoso de Asturias en el centro de Oviedo.</p>
-                        <a href="./eventos/feriadelcachopo.html">Ver evento &rarr;</a>
-                    </div>
-                </article>
-            </div>
-
-            <!-- MAPA -->
-            <div class="map-container" style="margin-top: 30px;">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d186068.23!2d-6.0419!3d43.3614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd36901e2e4e8d9b%3A0x4d5a6b6b6b6b6b6b!2sAsturias%2C%20Spain!5e0!3m2!1ses!2ses!4v1234567890"
-                    width="100%"
-                    height="300"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="Mapa de Asturias">
-                </iframe>
-            </div>
-        </main>
-
-        <!-- ASIDE: Recomendados -->
-        <aside class="sidebar">
-            <h2 class="section-title" data-i18n="recomendados">Recomendados</h2>
-            <article class="sidebar-card">
-                <img src="./assets/img/Mercado Medieval.jpg" alt="Recomendado 1">
-                <div class="sidebar-card-body">
-                    <span class="event-date">30 Abril 2026</span>
-                    <h3>Mercado Medieval de Avilés</h3>
-                <p>Recreación histórica con artesanía, gastronomía y espectáculos medievales.</p>
-                <a href="./eventos/mercadomedieval.html" class="btn-evento">Ver evento &rarr;</a>
-                </div>
-            </article>
-            <article class="sidebar-card">
-                <img src="./assets/img/semana.jpg" alt="Recomendado 2">
-                <div class="sidebar-card-body">
-                    <span class="event-date">10 Mayo 2026</span>
-                     <h3>Semana Negra de Gijón</h3>
-                <p>Festival literario y cultural con autores nacionales e internacionales.</p>
-                <a href="./eventos/semananegra.html" class="btn-evento">Ver evento →</a>
-                </div>
-            </article>
-            <article class="sidebar-card">
-                <img src="./assets/img/mercado.jpg" alt="Recomendado 3">
-                <div class="sidebar-card-body">
-                    <span class="event-date">22 Mayo 2026</span>
-                    <h3>Mercado Gastronómico de Oviedo</h3>
-                <p>Productos locales, sidra y gastronomía tradicional asturiana en la plaza del casco antiguo.</p>
-                <a href="./eventos/mercadogastronomicodeoviedo.html" class="btn-evento">Ver evento &rarr;</a>
-                </div>
-            </article>
-        </aside>
 
     </div>
+</section>
+
+
+<!-- ===== CUERPO PRINCIPAL ===== -->
+<div class="grid grid-cols-[1fr_320px] gap-6 max-w-7xl mx-auto mt-10 mb-10 px-6">
+    <!-- MAIN: Próximos eventos + Mapa -->
+    <main class="upcoming-events">
+        <h2 class="text-xl font-medium mb-5 border-l-4 border-orange-500 pl-3 text-gray-800" data-i18n="proximos_eventos">Próximos Eventos</h2>
+
+        <div class="grid gap-4">
+            <article class="flex rounded-lg overflow-hidden shadow-md bg-white">
+                <img src="./assets/img/musica4.jpg" alt="Baile tradicional asturiano" class="w-1/3 h-32 object-cover">
+                <div class="event-card-body p-4 flex flex-col justify-center">
+                    <span class="event-date text-sm font-semibold text-gray-600">20 Abril 2026</span>
+                    <h3 class="text-lg font-semibold text-gray-800 mt-1">Festival de Danza Tradicional</h3>
+                    <p class="text-gray-700 mt-1">Grupos de danza folk asturiana se reúnen para celebrar las tradiciones del Principado.</p>
+                    <a href="./eventos/festivaldedanzatradicional.html" class="text-orange-500 hover:underline mt-2 flex items-center">
+                        Ver evento &rarr;
+                    </a>
+                </div>
+            </article>
+            <article class="flex rounded-lg overflow-hidden shadow-md bg-white">
+                <img src="./assets/img/musica1.jpg" alt="Danza asturiana en montaña" class="w-1/3 h-32 object-cover">
+                <div class="event-card-body p-4 flex flex-col justify-center">
+                    <span class="event-date text-sm font-semibold text-gray-600">5 Mayo 2026</span>
+                    <h3 class="text-lg font-semibold text-gray-800 mt-1">Romería de los Picos de Europa</h3>
+                    <p class="text-gray-700 mt-1">Danzas y música tradicional asturiana con los Picos de Europa como espectacular telón de fondo.</p>
+                    <a href="./eventos/romeriaenlamontana.html" class="text-orange-500 hover:underline mt-2 flex items-center">
+                        Ver evento &rarr;
+                    </a>
+                </div>
+            </article>
+            <article class="flex rounded-lg overflow-hidden shadow-md bg-white">
+                <img src="./assets/img/gastronomia4.jpg" alt="Cachopo asturiano" class="w-1/3 h-32 object-cover">
+                <div class="event-card-body p-4 flex flex-col justify-center">
+                    <span class="event-date text-sm font-semibold text-gray-600">18 Mayo 2026</span>
+                    <h3 class="text-lg font-semibold text-gray-800 mt-1">Feria del Cachopo</h3>
+                    <p class="text-gray-700 mt-1">Concurso y degustación del cachopo más famoso de Asturias en el centro de Oviedo.</p>
+                    <a href="./eventos/feriadelcachopo.html" class="text-orange-500 hover:underline mt-2 flex items-center">
+                        Ver evento &rarr;
+                    </a>
+                </div>
+            </article>
+        </div>
+
+        <!-- MAPA -->
+        <div class="mt-[30px]">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d186068.23!2d-6.0419!3d43.3614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd36901e2e4e8d9b%3A0x4d5a6b6b6b6b6b6b!2sAsturias%2C%20Spain!5e0!3m2!1ses!2ses!4v1234567890"
+                width="100%"
+                height="530"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Mapa de Asturias">
+            </iframe>
+        </div>
+    </main>
+
+    <!-- ASIDE: Recomendados (igual, salen bien como estaban) -->
+    <aside class="sidebar">
+        <h2 class="text-xl font-medium mb-5 border-l-4 border-orange-500 pl-3 text-gray-800" data-i18n="recomendados">Recomendados</h2>
+
+        <article class="flex flex-col rounded-lg overflow-hidden shadow-md bg-white">
+            <img src="./assets/img/Mercado Medieval.jpg" alt="Recomendado 1" class="w-full h-40 object-cover">
+            <div class="sidebar-card-body p-4 flex flex-col">
+                <span class="event-date text-sm font-semibold text-gray-600">30 Abril 2026</span>
+                <h3 class="text-lg font-semibold text-gray-800 mt-1">Mercado Medieval de Avilés</h3>
+                <p class="text-gray-700 mt-1">Recreación histórica con artesanía, gastronomía y espectáculos medievales.</p>
+                <a href="./eventos/mercadomedieval.html" class="text-orange-500 hover:underline mt-2 flex items-center">
+                    Ver evento &rarr;
+                </a>
+            </div>
+        </article>
+        <article class="flex flex-col rounded-lg overflow-hidden shadow-md bg-white">
+            <img src="./assets/img/semana.jpg" alt="Recomendado 2" class="w-full h-40 object-cover">
+            <div class="sidebar-card-body p-4 flex flex-col">
+                <span class="event-date text-sm font-semibold text-gray-600">10 Mayo 2026</span>
+                <h3 class="text-lg font-semibold text-gray-800 mt-1">Semana Negra de Gijón</h3>
+                <p class="text-gray-700 mt-1">Festival literario y cultural con autores nacionales e internacionales.</p>
+                <a href="./eventos/semananegra.html" class="text-orange-500 hover:underline mt-2 flex items-center">
+                    Ver evento →
+                </a>
+            </div>
+        </article>
+        <article class="flex flex-col rounded-lg overflow-hidden shadow-md bg-white">
+            <img src="./assets/img/mercado.jpg" alt="Recomendado 3" class="w-full h-40 object-cover">
+            <div class="sidebar-card-body p-4 flex flex-col">
+                <span class="event-date text-sm font-semibold text-gray-600">22 Mayo 2026</span>
+                <h3 class="text-lg font-semibold text-gray-800 mt-1">Mercado Gastronómico de Oviedo</h3>
+                <p class="text-gray-700 mt-1">Productos locales, sidra y gastronomía tradicional asturiana en la plaza del casco antiguo.</p>
+                <a href="./eventos/mercadogastronomicodeoviedo.html" class="text-orange-500 hover:underline mt-2 flex items-center">
+                    Ver evento &rarr;
+                </a>
+            </div>
+        </article>
+    </aside>
+</div>
+
+<style>
+    .text-shadow {
+        text-shadow: 0 3px 10px rgba(0,0,0,0.5);
+    }
+</style>
+
 
     <!-- ===== FOOTER ===== -->
     <footer>
@@ -170,66 +220,75 @@
         <p>&copy; 2026 Happiness&amp;Co Asturias. Todos los derechos reservados.</p>
     </footer>
 
-    <script>
-        const translations = {
-            es: {
-                title: "Happiness&Co | Asturias",
-                nav_inicio: "Inicio",
-                nav_eventos: "Eventos",
-                nav_historial: "Historial de eventos",
-                nav_nosotros: "Sobre nosotros",
-                nav_fuentes: "Fuentes",
-                nav_contacto: "Contacto",
-                proximos_eventos: "Próximos Eventos",
-                recomendados: "Recomendados"
-            },
-            en: {
-                title: "Happiness&Co | Asturias",
-                nav_inicio: "Home",
-                nav_eventos: "Events",
-                nav_historial: "Event History",
-                nav_nosotros: "About Us",
-                nav_fuentes: "Sources",
-                nav_contacto: "Contact",
-                proximos_eventos: "Upcoming Events",
-                recomendados: "Recommended"
-            }
-        };
-
-        let currentLang = 'es';
-
-        function changeLanguage(lang) {
-            currentLang = lang;
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[lang][key]) {
-                    el.textContent = translations[lang][key];
-                }
-            });
-            document.title = translations[lang].title;
+<script>
+    const translations = {
+        es: {
+            title: "Happiness&Co | Asturias",
+            nav_inicio: "Inicio",
+            nav_eventos: "Eventos",
+            nav_historial: "Historial de eventos",
+            nav_nosotros: "Sobre nosotros",
+            nav_fuentes: "Fuentes",
+            nav_contacto: "Contacto",
+            proximos_eventos: "Próximos Eventos",
+            recomendados: "Recomendados"
+        },
+        en: {
+            title: "Happiness&Co | Asturias",
+            nav_inicio: "Home",
+            nav_eventos: "Events",
+            nav_historial: "Event History",
+            nav_nosotros: "About Us",
+            nav_fuentes: "Sources",
+            nav_contacto: "Contact",
+            proximos_eventos: "Upcoming Events",
+            recomendados: "Recommended"
         }
+    };
 
-        changeLanguage('es');
+    let currentLang = 'es';
 
-        const prev = document.querySelector('.prev');
-        const next = document.querySelector('.next');
-        const cards = document.querySelectorAll('.hero-card');
-        let index = 0;
-
-        cards.forEach((c, i) => c.style.display = i === 0 ? 'block' : 'none');
-
-        next?.addEventListener('click', () => {
-            cards[index].style.display = 'none';
-            index = (index + 1) % cards.length;
-            cards[index].style.display = 'block';
+    function changeLanguage(lang) {
+        currentLang = lang;
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                el.textContent = translations[lang][key];
+            }
         });
+        document.title = translations[lang].title;
+    }
 
-        prev?.addEventListener('click', () => {
-            cards[index].style.display = 'none';
-            index = (index - 1 + cards.length) % cards.length;
-            cards[index].style.display = 'block';
-        });
-    </script>
+    changeLanguage('es');
+
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    const slider = document.getElementById('hero-slider');
+    const viewport = document.getElementById('hero-viewport');
+    const cards = document.querySelectorAll('.hero-card');
+
+    let index = 0;
+
+    function updateSlider() {
+        const slideWidth = viewport.clientWidth;
+        slider.style.transform = `translateX(-${index * slideWidth}px)`;
+    }
+
+    next?.addEventListener('click', () => {
+        index = (index + 1) % cards.length;
+        updateSlider();
+    });
+
+    prev?.addEventListener('click', () => {
+        index = (index - 1 + cards.length) % cards.length;
+        updateSlider();
+    });
+
+    window.addEventListener('load', updateSlider);
+    window.addEventListener('resize', updateSlider);
+</script>
+
+
 
 </body>
 </html>
