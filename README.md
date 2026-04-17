@@ -61,4 +61,4 @@ El objetivo del proyecto es crear una plataforma completa para descubrir, consul
 
 ## Autor
 
-Proyecto realizado como parte de los estudios de DAW.
+Proyecto realizado Daniel Beiroto Ortega.
