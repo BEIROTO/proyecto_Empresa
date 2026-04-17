@@ -1,5 +1,6 @@
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -7,9 +8,10 @@ import java.time.format.DateTimeParseException;
 public class HappinessCo {
     private static HashMap<String, Usuario> usuarios = new HashMap<>();
     private static HashMap<Integer, Evento> eventos = new HashMap<>();
-    private static HashMap<Integer, Integer> contadorGaleriaPorEvento = new HashMap<>();
+    private static ArrayList<Favorito> favoritos = new ArrayList<>();
+
     private static int contadorEvento = 0;
-    private static List<Favorito> favoritos = new ArrayList<>();
+    private static int contadorGaleria = 0;
 
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
@@ -18,8 +20,15 @@ public class HappinessCo {
         do {
             mostrarMenu();
             System.out.print("Seleccione una opción: ");
+
+            while (!teclado.hasNextInt()) {
+                System.out.println("Debe introducir un número.");
+                teclado.nextLine();
+                System.out.print("Seleccione una opción: ");
+            }
+
             opcion = teclado.nextInt();
-            teclado.nextLine(); // consumir salto de línea
+            teclado.nextLine();
 
             switch (opcion) {
                 case 1:
@@ -38,47 +47,49 @@ public class HappinessCo {
                     anadirGaleria(teclado);
                     break;
                 case 6:
-                    anadirFavorito(teclado);
+                    eliminarGaleria(teclado);
                     break;
                 case 7:
-                    eliminarFavorito(teclado);
+                    anadirFavorito(teclado);
                     break;
                 case 8:
-                    mostrarFavoritos();
+                    eliminarFavorito(teclado);
                     break;
-                case 0:
-                    System.out.println("¡Gracias por usar HAPPINESS&CO!");
+                case 9:
+                    System.out.println("Saliendo del programa...");
                     break;
                 default:
                     System.out.println("Opción no válida");
             }
 
-        } while (opcion != 0);
+        } while (opcion != 9);
 
         teclado.close();
     }
 
     private static void mostrarMenu() {
-        System.out.println("\n" + "=".repeat(20));
+        System.out.println("\n====================");
         System.out.println("   HAPPINESS&CO");
-        System.out.println("=".repeat(20));
+        System.out.println("====================");
         System.out.println("1. Añadir usuario");
         System.out.println("2. Eliminar usuario");
         System.out.println("3. Añadir evento");
         System.out.println("4. Eliminar evento");
         System.out.println("5. Añadir galería");
-        System.out.println("6. Añadir favorito");
-        System.out.println("7. Eliminar favorito");
-        System.out.println("8. Mostrar favoritos");
-        System.out.println("0. Salir");
-        System.out.println("=".repeat(20));
+        System.out.println("6. Eliminar galería");
+        System.out.println("7. Añadir favorito");
+        System.out.println("8. Eliminar favorito");
+        System.out.println("9. Salir");
+        System.out.println("====================");
     }
 
     private static void anadirUsuario(Scanner teclado) {
         System.out.print("Nombre: ");
         String nombre = teclado.nextLine();
+
         System.out.print("Email: ");
         String email = teclado.nextLine();
+
         System.out.print("Password: ");
         String password = teclado.nextLine();
 
@@ -92,10 +103,12 @@ public class HappinessCo {
     }
 
     private static void eliminarUsuario(Scanner teclado) {
-        System.out.print("Email del usuario a eliminar: ");
+        System.out.print("Correo del usuario a eliminar: ");
         String email = teclado.nextLine();
 
-        if (usuarios.remove(email) != null) {
+        if (usuarios.containsKey(email)) {
+            usuarios.remove(email);
+            favoritos.removeIf(f -> f.getCorreoUsuario().equals(email));
             System.out.println("Usuario eliminado correctamente");
         } else {
             System.out.println("El usuario no existe");
@@ -103,27 +116,28 @@ public class HappinessCo {
     }
 
     private static void anadirEvento(Scanner teclado) {
-        System.out.print("Fecha (yyyy-MM-dd): ");
-        LocalDate fecha = null;
-
         try {
-            fecha = LocalDate.parse(teclado.nextLine(), DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+            System.out.print("Fecha (yyyy-MM-dd): ");
+            String fechaTexto = teclado.nextLine();
+            LocalDate fecha = LocalDate.parse(fechaTexto, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+
+            System.out.print("Título: ");
+            String titulo = teclado.nextLine();
+
+            System.out.print("Ubicación: ");
+            String ubicacion = teclado.nextLine();
+
+            System.out.print("Descripción: ");
+            String descripcion = teclado.nextLine();
+
+            contadorEvento++;
+            Evento evento = new Evento(contadorEvento, fecha, titulo, ubicacion, descripcion);
+            eventos.put(contadorEvento, evento);
+
+            System.out.println("Evento creado correctamente");
         } catch (DateTimeParseException e) {
-            System.out.println("Formato de fecha inválido (use yyyy-MM-dd)");
-            return;
+            System.out.println("Formato de fecha incorrecto");
         }
-
-        System.out.print("Título: ");
-        String titulo = teclado.nextLine();
-        System.out.print("Ubicación: ");
-        String ubicacion = teclado.nextLine();
-        System.out.print("Descripción: ");
-        String descripcion = teclado.nextLine();
-
-        int id = ++contadorEvento;
-        Evento evento = new Evento(id, fecha, titulo, ubicacion, descripcion);
-        eventos.put(id, evento);
-        System.out.println("Evento creado correctamente (ID: " + id + ")");
     }
 
     private static void eliminarEvento(Scanner teclado) {
@@ -132,14 +146,18 @@ public class HappinessCo {
             return;
         }
 
-        System.out.println("\nLista de eventos:");
-        eventos.values().forEach(evento -> System.out.println("  " + evento));
+        System.out.println("\nListado de eventos:");
+        for (Evento evento : eventos.values()) {
+            System.out.println(evento);
+        }
 
         System.out.print("ID del evento a eliminar: ");
-        int id = teclado.nextInt();
+        int idEvento = teclado.nextInt();
         teclado.nextLine();
 
-        if (eventos.remove(id) != null) {
+        if (eventos.containsKey(idEvento)) {
+            eventos.remove(idEvento);
+            favoritos.removeIf(f -> f.getIdEvento() == idEvento);
             System.out.println("Evento eliminado correctamente");
         } else {
             System.out.println("El evento no existe");
@@ -152,10 +170,12 @@ public class HappinessCo {
             return;
         }
 
-        System.out.println("\nLista de eventos:");
-        eventos.values().forEach(evento -> System.out.println("  " + evento));
+        System.out.println("\nListado de eventos:");
+        for (Evento evento : eventos.values()) {
+            System.out.println(evento);
+        }
 
-        System.out.print("ID del evento para la galería: ");
+        System.out.print("ID del evento al que añadir galería: ");
         int idEvento = teclado.nextInt();
         teclado.nextLine();
 
@@ -167,37 +187,84 @@ public class HappinessCo {
         System.out.print("Título de la galería: ");
         String titulo = teclado.nextLine();
 
-        int contadorGaleria = contadorGaleriaPorEvento.getOrDefault(idEvento, 0) + 1;
-        contadorGaleriaPorEvento.put(idEvento, contadorGaleria);
-        int idGaleria = contadorGaleria;
-
-        Galeria galeria = new Galeria(idGaleria, titulo, idEvento);
+        contadorGaleria++;
+        Galeria galeria = new Galeria(contadorGaleria, titulo, idEvento);
         eventos.get(idEvento).getGaleriaList().add(galeria);
-        System.out.println("Galería creada correctamente (ID: " + idGaleria + ")");
+
+        System.out.println("Galería creada correctamente");
+    }
+
+    private static void eliminarGaleria(Scanner teclado) {
+        if (eventos.isEmpty()) {
+            System.out.println("No hay eventos");
+            return;
+        }
+
+        System.out.println("\nListado de eventos:");
+        for (Evento evento : eventos.values()) {
+            System.out.println(evento);
+        }
+
+        System.out.print("ID del evento del que quieres eliminar una galería: ");
+        int idEvento = teclado.nextInt();
+        teclado.nextLine();
+
+        if (!eventos.containsKey(idEvento)) {
+            System.out.println("ID de evento incorrecto");
+            return;
+        }
+
+        ArrayList<Galeria> galerias = eventos.get(idEvento).getGaleriaList();
+
+        if (galerias.isEmpty()) {
+            System.out.println("No hay galerías en este evento");
+            return;
+        }
+
+        System.out.println("\nListado de galerías del evento:");
+        for (Galeria galeria : galerias) {
+            System.out.println(galeria);
+        }
+
+        System.out.print("ID de la galería a eliminar: ");
+        int idGaleria = teclado.nextInt();
+        teclado.nextLine();
+
+        boolean eliminada = galerias.removeIf(g -> g.getId() == idGaleria);
+
+        if (eliminada) {
+            System.out.println("Galería eliminada correctamente");
+        } else {
+            System.out.println("La galería no existe");
+        }
     }
 
     private static void anadirFavorito(Scanner teclado) {
         if (usuarios.isEmpty()) {
-            System.out.println("No hay usuarios registrados");
+            System.out.println("No hay usuarios");
             return;
         }
 
         if (eventos.isEmpty()) {
-            System.out.println("No hay eventos registrados");
+            System.out.println("No hay eventos");
             return;
         }
 
-        System.out.println("\nLista de usuarios:");
-        usuarios.values().forEach(usuario -> System.out.println("  " + usuario));
+        System.out.println("\nListado de usuarios:");
+        for (Usuario usuario : usuarios.values()) {
+            System.out.println(usuario);
+        }
 
-        System.out.println("\nLista de eventos:");
-        eventos.values().forEach(evento -> System.out.println("  " + evento));
+        System.out.println("\nListado de eventos:");
+        for (Evento evento : eventos.values()) {
+            System.out.println(evento);
+        }
 
         System.out.print("Correo del usuario: ");
         String correoUsuario = teclado.nextLine();
 
         if (!usuarios.containsKey(correoUsuario)) {
-            System.out.println("El usuario no existe");
+            System.out.println("Correo de usuario incorrecto");
             return;
         }
 
@@ -206,29 +273,32 @@ public class HappinessCo {
         teclado.nextLine();
 
         if (!eventos.containsKey(idEvento)) {
-            System.out.println("El evento no existe");
+            System.out.println("Evento incorrecto");
             return;
         }
 
         for (Favorito f : favoritos) {
             if (f.getCorreoUsuario().equals(correoUsuario) && f.getIdEvento() == idEvento) {
-                System.out.println("Ese favorito ya existe");
+                System.out.println("El favorito ya existe");
                 return;
             }
         }
 
         Favorito favorito = new Favorito(correoUsuario, idEvento);
         favoritos.add(favorito);
-        System.out.println("Favorito añadido correctamente");
+        System.out.println("Favorito creado correctamente");
     }
 
     private static void eliminarFavorito(Scanner teclado) {
         if (favoritos.isEmpty()) {
-            System.out.println("No hay favoritos guardados");
+            System.out.println("No hay favoritos");
             return;
         }
 
-        mostrarFavoritos();
+        System.out.println("\nListado de favoritos:");
+        for (Favorito favorito : favoritos) {
+            System.out.println(favorito);
+        }
 
         System.out.print("Correo del usuario: ");
         String correoUsuario = teclado.nextLine();
@@ -238,7 +308,7 @@ public class HappinessCo {
         teclado.nextLine();
 
         boolean eliminado = favoritos.removeIf(f ->
-                f.getCorreoUsuario().equals(correoUsuario) && f.getIdEvento() == idEvento
+            f.getCorreoUsuario().equals(correoUsuario) && f.getIdEvento() == idEvento
         );
 
         if (eliminado) {
@@ -246,15 +316,5 @@ public class HappinessCo {
         } else {
             System.out.println("El favorito no existe");
         }
-    }
-
-    private static void mostrarFavoritos() {
-        if (favoritos.isEmpty()) {
-            System.out.println("No hay favoritos guardados");
-            return;
-        }
-
-        System.out.println("\nLista de favoritos:");
-        favoritos.forEach(f -> System.out.println("  " + f));
     }
 }

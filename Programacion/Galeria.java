@@ -1,4 +1,3 @@
-
 public class Galeria {
     private int id;
     private String titulo;
@@ -10,12 +9,23 @@ public class Galeria {
         this.idEvento = idEvento;
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
-    public String getTitulo() { return titulo; }
-    public void setTitulo(String titulo) { this.titulo = titulo; }
-    public int getIdEvento() { return idEvento; }
-    public void setIdEvento(int idEvento) { this.idEvento = idEvento; }
+    public int getId() {
+        return id; }
+
+    public void setId(int id) {
+        this.id = id; }
+
+    public String getTitulo() {
+        return titulo; }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;}
+
+    public int getIdEvento() {
+        return idEvento; }
+
+    public void setIdEvento(int idEvento) {
+        this.idEvento = idEvento;}
 
     @Override
     public String toString() {

@@ -1,4 +1,4 @@
-
+package src;
 public class Favorito {
     private String correoUsuario;
     private int idEvento;

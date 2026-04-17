@@ -1,3 +1,4 @@
+package src;
 
 import java.util.*;
 import java.time.LocalDate;
@@ -19,7 +20,7 @@ public class HappinessCo {
             mostrarMenu();
             System.out.print("Seleccione una opción: ");
             opcion = teclado.nextInt();
-            teclado.nextLine(); // consumir salto de línea
+            teclado.nextLine();
 
             switch (opcion) {
                 case 1:
@@ -238,7 +239,7 @@ public class HappinessCo {
         teclado.nextLine();
 
         boolean eliminado = favoritos.removeIf(f ->
-                f.getCorreoUsuario().equals(correoUsuario) && f.getIdEvento() == idEvento
+            f.getCorreoUsuario().equals(correoUsuario) && f.getIdEvento() == idEvento
         );
 
         if (eliminado) {
@@ -255,6 +256,8 @@ public class HappinessCo {
         }
 
         System.out.println("\nLista de favoritos:");
-        favoritos.forEach(f -> System.out.println("  " + f));
+        for (Favorito f : favoritos) {
+            System.out.println("  " + f);
+        }
     }
 }
