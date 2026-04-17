@@ -28,6 +28,7 @@ Happiness&Co Asturias es una plataforma pensada para mostrar eventos culturales,
 - `assets/`: imágenes, estilos y recursos gráficos.
 - `Java`: clases del programa de consola.
 - `Base de datos`: tablas, relaciones y vistas SQL.
+- `rss/` : archivo RSS con las novedades de eventos.
 
 ## Parte web
 
@@ -39,7 +40,7 @@ La aplicación en Java se usa para gestionar internamente:
 
 - Usuarios.
 - Eventos.
-- GalerÃ­as.
+- Galerías.
 - Favoritos.
 
 El programa funciona con un menú de consola y usa estructuras como `HashMap` y `ArrayList` para guardar los datos en memoria.
@@ -54,6 +55,10 @@ La base de datos organiza la información del proyecto mediante tablas y vistas.
 - `CREATE OR REPLACE VIEW` para crear visitas virtuales.
 
 Las vistas ayudan a mostrar información filtrada, como galerías antes de una fecha, favoritos de un usuario o imágenes relacionadas con un evento concreto.
+
+## RSS
+
+El proyecto también incluye un archivo RSS que publica automáticamente los eventos nuevos de la web. Este feed permite consultar de forma rápida las últimas novedades sin entrar manualmente en cada página. Cada elemento del RSS contiene el título del evento, el enlace, una descripción, la categoría y la fecha de publicación, por lo que funciona como una lista actualizada de eventos.
 
 ## Objetivo
 
